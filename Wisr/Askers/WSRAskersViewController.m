@@ -46,9 +46,8 @@
 - (void)fetchAskers;
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    NSURL *url = [NSURL URLWithString:@"http://wisr.com/askers.json"];
     NSURLSessionDataTask *dataTask =
-    [self.session dataTaskWithURL:url
+    [self.session dataTaskWithURL:[WSRApi URLForCollection:@"askers"]
                 completionHandler:^(NSData *data,
                                     NSURLResponse *response,
                                     NSError *error) {

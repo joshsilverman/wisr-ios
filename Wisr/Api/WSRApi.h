@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * const baseUrlStr;
+extern NSString * const baseURLStr;
 
 @interface WSRApi : NSObject
+
++ (NSURL*)URLForCollection:(NSString*)resource;
 
 @end

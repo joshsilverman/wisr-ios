@@ -15,21 +15,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    _askers = [NSMutableArray arrayWithCapacity:20];
-//    
-//    WSRAsker *asker = [[WSRAsker alloc] init];
-//    asker.subject = @"Bill Evans";
-//    [_askers addObject:asker];
-//    
-//    asker = [[WSRAsker alloc] init];
-//    asker.subject = @"Oscar Peterson";
-//    [_askers addObject:asker];
-//    
-//    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-//    UINavigationController *navigationController = [tabBarController viewControllers][0];
-//    WSRAskersViewController *askersViewController = [navigationController viewControllers][0];
-//    askersViewController.askers = _askers;
-    
     return YES;
 }
 							

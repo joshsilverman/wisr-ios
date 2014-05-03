@@ -8,8 +8,17 @@
 
 #import "WSRApi.h"
 
-NSString * const baseUrlStr = @"http://wisr.com/";
+NSString * const baseURLStr = @"http://wisr.com";
 
 @implementation WSRApi
+
++ (NSURL*)URLForCollection:(NSString*)resource
+{
+    NSString *urlWithParamsStr = [NSString stringWithFormat:@"%@/%@.json",
+                                  baseURLStr,
+                                  resource];
+    NSURL *url = [NSURL URLWithString:urlWithParamsStr];
+    return url;
+}
 
 @end
