@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WSRAskersViewController.h"
+#import "WSRAsker.h"
 
 @interface WSRAppDelegate : UIResponder <UIApplicationDelegate>
 

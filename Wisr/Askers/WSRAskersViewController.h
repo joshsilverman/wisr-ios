@@ -6,8 +6,11 @@
 //  Copyright (c) 2014 Wisr. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "WSRAsker.h"
 
 @interface WSRAskersViewController : UITableViewController
+
+@property (nonatomic, strong) NSMutableArray *askers;
 
 @end
