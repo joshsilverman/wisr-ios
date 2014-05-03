@@ -22,6 +22,7 @@
 		9E94C37D19147B4600D60337 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E94C35C19147B4600D60337 /* UIKit.framework */; };
 		9E94C38519147B4600D60337 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E94C38319147B4600D60337 /* InfoPlist.strings */; };
 		9E94C38719147B4600D60337 /* WisrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C38619147B4600D60337 /* WisrTests.m */; };
+		9E94C392191483C000D60337 /* WSRAskersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C391191483C000D60337 /* WSRAskersViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		9E94C38219147B4600D60337 /* WisrTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WisrTests-Info.plist"; sourceTree = "<group>"; };
 		9E94C38419147B4600D60337 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9E94C38619147B4600D60337 /* WisrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WisrTests.m; sourceTree = "<group>"; };
+		9E94C390191483C000D60337 /* WSRAskersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRAskersViewController.h; path = Askers/WSRAskersViewController.h; sourceTree = "<group>"; };
+		9E94C391191483C000D60337 /* WSRAskersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRAskersViewController.m; path = Askers/WSRAskersViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,7 @@
 		9E94C35E19147B4600D60337 /* Wisr */ = {
 			isa = PBXGroup;
 			children = (
+				9E94C393191483F900D60337 /* Askers */,
 				9E94C36719147B4600D60337 /* WSRAppDelegate.h */,
 				9E94C36819147B4600D60337 /* WSRAppDelegate.m */,
 				9E94C36A19147B4600D60337 /* Main.storyboard */,
@@ -155,6 +159,15 @@
 				9E94C38319147B4600D60337 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9E94C393191483F900D60337 /* Askers */ = {
+			isa = PBXGroup;
+			children = (
+				9E94C390191483C000D60337 /* WSRAskersViewController.h */,
+				9E94C391191483C000D60337 /* WSRAskersViewController.m */,
+			);
+			name = Askers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E94C392191483C000D60337 /* WSRAskersViewController.m in Sources */,
 				9E94C36519147B4600D60337 /* main.m in Sources */,
 				9E94C36919147B4600D60337 /* WSRAppDelegate.m in Sources */,
 				9E94C36F19147B4600D60337 /* WSRFirstViewController.m in Sources */,
