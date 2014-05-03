@@ -115,6 +115,20 @@
     WSRFeedsPublicationCell *textCell = (WSRFeedsPublicationCell *)cell;
     WSRFeedPublication *pub = _feedPublications[indexPath.row];
     textCell.questionTextLabel.text = pub.questionText;
+    textCell.questionTextLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WSRFeedPublication *pub = _feedPublications[indexPath.row];
+    NSString *content = pub.questionText;
+    
+    // Max size you will permit
+    CGSize maxSize = CGSizeMake(220, 1000);
+    UIFont *font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+    CGSize size = [content sizeWithFont:font constrainedToSize:maxSize lineBreakMode:NSLineBreakByWordWrapping];
+
+    return size.height + 2*10;
 }
 
 - (IBAction)done:(id)sender
