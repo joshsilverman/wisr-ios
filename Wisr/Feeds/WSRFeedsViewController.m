@@ -104,10 +104,17 @@
     static NSString *CellIdentifier = @"FeedPublicationCell";
     WSRFeedsPublicationCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    WSRFeedPublication *pub = _feedPublications[indexPath.row];
-    cell.questionTextLabel.text = pub.questionText;
+//    WSRFeedPublication *pub = _feedPublications[indexPath.row];
+    [self configureCell:cell forRowAtIndexPath:indexPath];
     
     return cell;
+}
+
+- (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WSRFeedsPublicationCell *textCell = (WSRFeedsPublicationCell *)cell;
+    WSRFeedPublication *pub = _feedPublications[indexPath.row];
+    textCell.questionTextLabel.text = pub.questionText;
 }
 
 - (IBAction)done:(id)sender

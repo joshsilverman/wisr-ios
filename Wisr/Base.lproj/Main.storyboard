@@ -126,7 +126,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question Text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-5C-Le0">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question Text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-5C-Le0">
                                             <rect key="frame" x="20" y="11" width="280" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="questionTextLabel"/>
@@ -135,6 +135,11 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Kd8-5C-Le0" secondAttribute="bottom" constant="10" id="NNW-wS-8KK"/>
+                                        <constraint firstAttribute="trailing" secondItem="Kd8-5C-Le0" secondAttribute="trailing" constant="20" symbolic="YES" id="pQ3-b5-c1O"/>
+                                        <constraint firstItem="Kd8-5C-Le0" firstAttribute="leading" secondItem="xGs-lr-MOZ" secondAttribute="leading" constant="20" symbolic="YES" id="tvw-ap-96P"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="questionTextLabel" destination="Kd8-5C-Le0" id="Seh-WO-7x8"/>
