@@ -10,6 +10,7 @@
 #import "WSRApi.h"
 #import "WSRFeedPublication.h"
 #import "WSRAsker.h"
+#import "WSRFeedsPublicationCell.h"
 
 @protocol WSRFeedsViewControllerDelegate <NSObject>
 

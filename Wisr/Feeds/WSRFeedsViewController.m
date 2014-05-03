@@ -102,10 +102,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"FeedPublicationCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    WSRFeedsPublicationCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     WSRFeedPublication *pub = _feedPublications[indexPath.row];
-    cell.textLabel.text = pub.questionText;
+    cell.questionTextLabel.text = pub.questionText;
     
     return cell;
 }
