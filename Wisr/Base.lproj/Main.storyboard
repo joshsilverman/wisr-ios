@@ -93,7 +93,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="YoU-EE-juj" kind="modal" id="kYb-aG-q78"/>
+                                    <segue destination="uoA-N7-xGg" kind="push" id="dAM-06-1Ei"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -102,7 +102,9 @@
                             <outlet property="delegate" destination="YgM-JV-j7B" id="SEf-2h-aUa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Subjects" id="cIZ-QA-W7q"/>
+                    <navigationItem key="navigationItem" title="Subjects" id="cIZ-QA-W7q">
+                        <barButtonItem key="backBarButtonItem" title=" " id="9uo-0x-ysx"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZpB-mm-CIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,20 +133,11 @@
                             <outlet property="delegate" destination="uoA-N7-xGg" id="BOc-TD-xkY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="3sf-Cd-jAc">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="AIO-tY-YYf">
-                            <connections>
-                                <action selector="done:" destination="uoA-N7-xGg" id="puO-b1-JyD"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="doneButton" destination="AIO-tY-YYf" id="i0t-4y-De6"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="3sf-Cd-jAc"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COP-rD-WVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2245" y="-191"/>
+            <point key="canvasLocation" x="1647" y="-191"/>
         </scene>
         <!--Navigation Controller - Subjects-->
         <scene sceneID="2Tm-FQ-NgX">
@@ -164,24 +157,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uL-Le-RRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="653" y="-191"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="TfJ-I8-h7X">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YoU-EE-juj" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qCO-d9-9pq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="uoA-N7-xGg" kind="relationship" relationship="rootViewController" id="WIg-qP-JGL"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ahl-Dl-Rs5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1701" y="-191"/>
         </scene>
     </scenes>
     <resources>
