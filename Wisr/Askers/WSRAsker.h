@@ -12,4 +12,6 @@
 
 @property (nonatomic, copy) NSString *subject;
 
+- (id)initWithJSONData:(NSDictionary*)data;
+
 @end

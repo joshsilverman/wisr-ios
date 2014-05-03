@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "WSRAsker.h"
+#import "WSRApi.h"
 
 @interface WSRAskersViewController : UITableViewController
-
-@property (nonatomic, strong) NSMutableArray *askers;
 
 @end

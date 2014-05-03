@@ -10,4 +10,13 @@
 
 @implementation WSRAsker
 
+- (id)initWithJSONData:(NSDictionary*)data
+{
+    self = [super init];
+    if (self) {
+        self.subject = data[@"subject"];
+    }
+    return self;
+}
+
 @end

@@ -10,6 +10,9 @@
 
 @interface WSRAskersViewController ()
 
+@property (nonatomic, strong) NSArray *askers;
+@property (nonatomic, strong) NSURLSession *session;
+
 @end
 
 @implementation WSRAskersViewController
@@ -23,15 +26,67 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        _session = [NSURLSession sessionWithConfiguration:config];
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self fetchAskers];
+}
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+- (void)fetchAskers;
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    NSURL *url = [NSURL URLWithString:@"http://wisr.com/askers.json"];
+    NSURLSessionDataTask *dataTask =
+    [self.session dataTaskWithURL:url
+                completionHandler:^(NSData *data,
+                                    NSURLResponse *response,
+                                    NSError *error) {
+                    if (!error) {
+                        NSHTTPURLResponse *httpResp = (NSHTTPURLResponse*) response;
+                        if (httpResp.statusCode == 200) {
+                            NSError *jsonError;
+                            
+                            NSArray *askersJSON =
+                            [NSJSONSerialization JSONObjectWithData:data
+                                                            options:NSJSONReadingAllowFragments
+                                                              error:&jsonError];
+                            
+                            NSMutableArray *askersFound = [[NSMutableArray alloc] init];
+                            
+                            if (!jsonError) {
+                                for (NSDictionary *data in askersJSON) {
+                                    if (![data[@"published"] isKindOfClass:[NSNull class]]
+                                        && ![data[@"subject"] isKindOfClass:[NSNull class]]
+                                        && data[@"published"]) {
+                                        
+                                        WSRAsker *asker = [[WSRAsker alloc] initWithJSONData:data];
+                                        [askersFound addObject:asker];
+                                    }
+                                }
+                            }
+                        
+                            self.askers = askersFound;
+
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                                [self.tableView reloadData];
+                            });
+                        }
+                    }
+                }];
+    
+    [dataTask resume];
 }
 
 - (void)didReceiveMemoryWarning
