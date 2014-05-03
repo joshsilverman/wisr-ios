@@ -13,8 +13,7 @@
 
 @protocol WSRFeedsViewControllerDelegate <NSObject>
 
-//- (void)feedsViewControllerDidCancel:(WSRFeedsViewController*)controller;
-//- (void)feedsViewControllerDoneWithDetails:(WSRFeedsViewController*)controller;
+- (void)feedsControllerDone;
 
 @end
 

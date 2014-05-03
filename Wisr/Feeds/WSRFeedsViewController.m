@@ -9,9 +9,8 @@
 #import "WSRFeedsViewController.h"
 
 @interface WSRFeedsViewController ()
-
 @property (nonatomic, strong) NSArray *feedPublications;
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 @end
 
 @implementation WSRFeedsViewController
@@ -109,6 +108,11 @@
     cell.textLabel.text = pub.questionText;
     
     return cell;
+}
+
+- (IBAction)done:(id)sender
+{
+    [self.delegate feedsControllerDone];
 }
 
 /*

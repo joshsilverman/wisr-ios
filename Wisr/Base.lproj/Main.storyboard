@@ -131,7 +131,16 @@
                             <outlet property="delegate" destination="uoA-N7-xGg" id="BOc-TD-xkY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="3sf-Cd-jAc"/>
+                    <navigationItem key="navigationItem" id="3sf-Cd-jAc">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="AIO-tY-YYf">
+                            <connections>
+                                <action selector="done:" destination="uoA-N7-xGg" id="puO-b1-JyD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="doneButton" destination="AIO-tY-YYf" id="i0t-4y-De6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COP-rD-WVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,7 +150,7 @@
         <scene sceneID="2Tm-FQ-NgX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q2D-2t-eRU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Subjects" id="T5U-Vm-QZ7"/>
+                    <tabBarItem key="tabBarItem" title="Subjects" image="first" id="T5U-Vm-QZ7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sEK-XI-kih">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -176,8 +185,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

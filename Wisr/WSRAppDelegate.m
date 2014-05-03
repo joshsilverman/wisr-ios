@@ -15,7 +15,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self initAppearance];
+    
     return YES;
+}
+
+- (void)initAppearance
+{
+    UIColor *byteClubBlue = [UIColor colorWithRed:61/255.0f
+                                            green:154/255.0f
+                                             blue:232/255.0f
+                                            alpha:1.0f];
+    
+    // Set appearance info
+    [[UITabBar appearance] setBarTintColor:byteClubBlue];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackOpaque];
+    [[UINavigationBar appearance] setBarTintColor:byteClubBlue];
+    
+    [[UIToolbar appearance] setBarStyle:UIBarStyleBlackOpaque];
+    [[UIToolbar appearance] setBarTintColor:byteClubBlue];
+    
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
