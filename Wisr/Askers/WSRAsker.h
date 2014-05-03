@@ -11,6 +11,7 @@
 @interface WSRAsker : NSObject
 
 @property (nonatomic, copy) NSString *subject;
+@property (nonatomic, copy) NSString *subjectURL;
 
 - (id)initWithJSONData:(NSDictionary*)data;
 

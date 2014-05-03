@@ -24,6 +24,8 @@
 		9E94C396191486D600D60337 /* WSRAsker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C395191486D600D60337 /* WSRAsker.m */; };
 		9E94C39919148AD300D60337 /* WSRAskersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C39819148AD300D60337 /* WSRAskersViewController.m */; };
 		9E94C39D19152D6800D60337 /* WSRApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C39C19152D6800D60337 /* WSRApi.m */; };
+		9E94C3A119156B8F00D60337 /* WSRFeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C3A019156B8F00D60337 /* WSRFeedsViewController.m */; };
+		9E94C3A419156F2000D60337 /* WSRFeedPublication.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C3A319156F2000D60337 /* WSRFeedPublication.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,10 @@
 		9E94C39819148AD300D60337 /* WSRAskersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRAskersViewController.m; path = Askers/WSRAskersViewController.m; sourceTree = "<group>"; };
 		9E94C39B19152D6800D60337 /* WSRApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRApi.h; path = Api/WSRApi.h; sourceTree = "<group>"; };
 		9E94C39C19152D6800D60337 /* WSRApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRApi.m; path = Api/WSRApi.m; sourceTree = "<group>"; };
+		9E94C39F19156B8F00D60337 /* WSRFeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRFeedsViewController.h; path = Feeds/WSRFeedsViewController.h; sourceTree = "<group>"; };
+		9E94C3A019156B8F00D60337 /* WSRFeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRFeedsViewController.m; path = Feeds/WSRFeedsViewController.m; sourceTree = "<group>"; };
+		9E94C3A219156F2000D60337 /* WSRFeedPublication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRFeedPublication.h; path = Feeds/WSRFeedPublication.h; sourceTree = "<group>"; };
+		9E94C3A319156F2000D60337 /* WSRFeedPublication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRFeedPublication.m; path = Feeds/WSRFeedPublication.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,7 @@
 			children = (
 				9E94C39A19152D1300D60337 /* Api */,
 				9E94C393191483F900D60337 /* Askers */,
+				9E94C39E19156AD700D60337 /* Feeds */,
 				9E94C36719147B4600D60337 /* WSRAppDelegate.h */,
 				9E94C36819147B4600D60337 /* WSRAppDelegate.m */,
 				9E94C36A19147B4600D60337 /* Main.storyboard */,
@@ -181,6 +188,17 @@
 				9E94C39C19152D6800D60337 /* WSRApi.m */,
 			);
 			name = Api;
+			sourceTree = "<group>";
+		};
+		9E94C39E19156AD700D60337 /* Feeds */ = {
+			isa = PBXGroup;
+			children = (
+				9E94C39F19156B8F00D60337 /* WSRFeedsViewController.h */,
+				9E94C3A019156B8F00D60337 /* WSRFeedsViewController.m */,
+				9E94C3A219156F2000D60337 /* WSRFeedPublication.h */,
+				9E94C3A319156F2000D60337 /* WSRFeedPublication.m */,
+			);
+			name = Feeds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,8 +300,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E94C39919148AD300D60337 /* WSRAskersViewController.m in Sources */,
+				9E94C3A419156F2000D60337 /* WSRFeedPublication.m in Sources */,
 				9E94C36519147B4600D60337 /* main.m in Sources */,
 				9E94C36919147B4600D60337 /* WSRAppDelegate.m in Sources */,
+				9E94C3A119156B8F00D60337 /* WSRFeedsViewController.m in Sources */,
 				9E94C39D19152D6800D60337 /* WSRApi.m in Sources */,
 				9E94C396191486D600D60337 /* WSRAsker.m in Sources */,
 				9E94C37219147B4600D60337 /* WSRSecondViewController.m in Sources */,

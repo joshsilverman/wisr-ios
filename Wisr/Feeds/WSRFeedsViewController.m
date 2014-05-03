@@ -1,21 +1,20 @@
 //
-//  WSRAskersViewController.m
+//  WSRFeedsViewController.m
 //  Wisr
 //
-//  Created by Josh Silverman on 5/2/14.
+//  Created by Josh Silverman on 5/3/14.
 //  Copyright (c) 2014 Wisr. All rights reserved.
 //
 
-#import "WSRAskersViewController.h"
+#import "WSRFeedsViewController.h"
 
-@interface WSRAskersViewController ()<WSRFeedsViewControllerDelegate>
+@interface WSRFeedsViewController ()
 
-@property (nonatomic, strong) NSArray *askers;
-@property (nonatomic, strong) NSURLSession *session;
+@property (nonatomic, strong) NSArray *feedPublications;
 
 @end
 
-@implementation WSRAskersViewController
+@implementation WSRFeedsViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,14 +39,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self fetchAskers];
+    [self fetchFeedPublications];
 }
 
-- (void)fetchAskers;
+- (void)fetchFeedPublications;
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     NSURLSessionDataTask *dataTask =
-    [self.session dataTaskWithURL:[WSRApi URLForCollection:@"askers"]
+    [self.session dataTaskWithURL:[WSRApi URLForCollection:_asker.subjectURL]
                 completionHandler:^(NSData *data,
                                     NSURLResponse *response,
                                     NSError *error) {
@@ -61,22 +60,17 @@
                                                             options:NSJSONReadingAllowFragments
                                                               error:&jsonError];
                             
-                            NSMutableArray *askersFound = [[NSMutableArray alloc] init];
+                            NSMutableArray *feedPubs = [[NSMutableArray alloc] init];
                             
                             if (!jsonError) {
                                 for (NSDictionary *data in askersJSON) {
-                                    if (![data[@"published"] isKindOfClass:[NSNull class]]
-                                        && ![data[@"subject"] isKindOfClass:[NSNull class]]
-                                        && data[@"published"]) {
-                                        
-                                        WSRAsker *asker = [[WSRAsker alloc] initWithJSONData:data];
-                                        [askersFound addObject:asker];
-                                    }
+                                    WSRFeedPublication *pub = [[WSRFeedPublication alloc] initWithJSONData:data];
+                                    [feedPubs addObject:pub];
                                 }
                             }
-                        
-                            self.askers = askersFound;
-
+                            
+                            self.feedPublications = feedPubs;
+                            
                             dispatch_async(dispatch_get_main_queue(), ^{
                                 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                                 [self.tableView reloadData];
@@ -98,25 +92,21 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return [self.askers count];
+    return [self.feedPublications count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AskerCell"
-                                                            forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"FeedPublicationCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    WSRAsker *asker = (self.askers)[indexPath.row];
-    cell.textLabel.text = asker.subject;
+    WSRFeedPublication *pub = _feedPublications[indexPath.row];
+    cell.textLabel.text = pub.questionText;
     
     return cell;
 }
@@ -160,15 +150,16 @@
 }
 */
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+/*
+#pragma mark - Navigation
+
+// In a story board-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    UINavigationController *navigationController = segue.destinationViewController;
-    WSRFeedsViewController *feed = (WSRFeedsViewController*) [navigationController viewControllers][0];
-    feed.delegate = self;
-    feed.session = _session;
-    
-    WSRAsker *asker =  _askers[[self.tableView indexPathForSelectedRow].row];
-    feed.asker = asker;
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+
+ */
 
 @end

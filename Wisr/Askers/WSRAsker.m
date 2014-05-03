@@ -15,6 +15,7 @@
     self = [super init];
     if (self) {
         self.subject = data[@"subject"];
+        self.subjectURL = data[@"subject_url"];
     }
     return self;
 }
