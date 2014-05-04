@@ -155,7 +155,9 @@
                             <outlet property="delegate" destination="uoA-N7-xGg" id="BOc-TD-xkY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="3sf-Cd-jAc"/>
+                    <navigationItem key="navigationItem" id="3sf-Cd-jAc">
+                        <barButtonItem key="backBarButtonItem" title=" " id="dT9-Xi-uKd"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COP-rD-WVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
