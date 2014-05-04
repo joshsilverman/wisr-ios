@@ -124,7 +124,7 @@
     NSString *content = pub.questionText;
     
     // Max size you will permit
-    CGSize maxSize = CGSizeMake(286, 1000);
+    CGSize maxSize = CGSizeMake(266, 1000);
     UIFont *font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     CGSize size = [content sizeWithFont:font constrainedToSize:maxSize lineBreakMode:NSLineBreakByWordWrapping];
 

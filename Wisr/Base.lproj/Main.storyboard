@@ -131,7 +131,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="questionTextLabel"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="Nvh-Ee-nYU"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="Nvh-Ee-nYU"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -139,8 +139,9 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Kd8-5C-Le0" secondAttribute="bottom" constant="6" id="ND3-5u-PfW"/>
                                         <constraint firstItem="Kd8-5C-Le0" firstAttribute="leading" secondItem="xGs-lr-MOZ" secondAttribute="leading" constant="20" id="V8y-ek-UHR"/>
-                                        <constraint firstAttribute="trailing" secondItem="Kd8-5C-Le0" secondAttribute="trailing" constant="14" id="kT8-LI-gOe"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kd8-5C-Le0" secondAttribute="trailing" constant="1" id="kT8-LI-gOe"/>
                                         <constraint firstItem="Kd8-5C-Le0" firstAttribute="top" secondItem="xGs-lr-MOZ" secondAttribute="top" constant="7" id="z3u-Wt-0AJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
