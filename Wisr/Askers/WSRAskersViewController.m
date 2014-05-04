@@ -168,7 +168,6 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     WSRFeedsViewController *feed = segue.destinationViewController;
-//    WSRFeedsViewController *feed = (WSRFeedsViewController*) [navigationController viewControllers][0];
     feed.delegate = self;
     feed.session = _session;
     

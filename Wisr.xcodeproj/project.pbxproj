@@ -27,6 +27,7 @@
 		9E94C3A119156B8F00D60337 /* WSRFeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C3A019156B8F00D60337 /* WSRFeedsViewController.m */; };
 		9E94C3A419156F2000D60337 /* WSRFeedPublication.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C3A319156F2000D60337 /* WSRFeedPublication.m */; };
 		9E94C3A719159BEA00D60337 /* WSRFeedsPublicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C3A619159BEA00D60337 /* WSRFeedsPublicationCell.m */; };
+		9E94C3AC1916980D00D60337 /* WSRFeedPublicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C3AB1916980D00D60337 /* WSRFeedPublicationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,10 +68,12 @@
 		9E94C39C19152D6800D60337 /* WSRApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRApi.m; path = Api/WSRApi.m; sourceTree = "<group>"; };
 		9E94C39F19156B8F00D60337 /* WSRFeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRFeedsViewController.h; path = Feeds/WSRFeedsViewController.h; sourceTree = "<group>"; };
 		9E94C3A019156B8F00D60337 /* WSRFeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRFeedsViewController.m; path = Feeds/WSRFeedsViewController.m; sourceTree = "<group>"; };
-		9E94C3A219156F2000D60337 /* WSRFeedPublication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRFeedPublication.h; path = Feeds/WSRFeedPublication.h; sourceTree = "<group>"; };
-		9E94C3A319156F2000D60337 /* WSRFeedPublication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRFeedPublication.m; path = Feeds/WSRFeedPublication.m; sourceTree = "<group>"; };
+		9E94C3A219156F2000D60337 /* WSRFeedPublication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRFeedPublication.h; path = Feeds/FeedPublications/WSRFeedPublication.h; sourceTree = "<group>"; };
+		9E94C3A319156F2000D60337 /* WSRFeedPublication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRFeedPublication.m; path = Feeds/FeedPublications/WSRFeedPublication.m; sourceTree = "<group>"; };
 		9E94C3A519159BEA00D60337 /* WSRFeedsPublicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRFeedsPublicationCell.h; path = Feeds/WSRFeedsPublicationCell.h; sourceTree = "<group>"; };
 		9E94C3A619159BEA00D60337 /* WSRFeedsPublicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRFeedsPublicationCell.m; path = Feeds/WSRFeedsPublicationCell.m; sourceTree = "<group>"; };
+		9E94C3AA1916980D00D60337 /* WSRFeedPublicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRFeedPublicationViewController.h; path = Feeds/FeedPublications/WSRFeedPublicationViewController.h; sourceTree = "<group>"; };
+		9E94C3AB1916980D00D60337 /* WSRFeedPublicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRFeedPublicationViewController.m; path = Feeds/FeedPublications/WSRFeedPublicationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,12 +201,22 @@
 			children = (
 				9E94C39F19156B8F00D60337 /* WSRFeedsViewController.h */,
 				9E94C3A019156B8F00D60337 /* WSRFeedsViewController.m */,
-				9E94C3A219156F2000D60337 /* WSRFeedPublication.h */,
-				9E94C3A319156F2000D60337 /* WSRFeedPublication.m */,
 				9E94C3A519159BEA00D60337 /* WSRFeedsPublicationCell.h */,
 				9E94C3A619159BEA00D60337 /* WSRFeedsPublicationCell.m */,
+				9E94C3A91916974B00D60337 /* FeedPublications */,
 			);
 			name = Feeds;
+			sourceTree = "<group>";
+		};
+		9E94C3A91916974B00D60337 /* FeedPublications */ = {
+			isa = PBXGroup;
+			children = (
+				9E94C3A219156F2000D60337 /* WSRFeedPublication.h */,
+				9E94C3A319156F2000D60337 /* WSRFeedPublication.m */,
+				9E94C3AA1916980D00D60337 /* WSRFeedPublicationViewController.h */,
+				9E94C3AB1916980D00D60337 /* WSRFeedPublicationViewController.m */,
+			);
+			name = FeedPublications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +325,7 @@
 				9E94C3A119156B8F00D60337 /* WSRFeedsViewController.m in Sources */,
 				9E94C39D19152D6800D60337 /* WSRApi.m in Sources */,
 				9E94C396191486D600D60337 /* WSRAsker.m in Sources */,
+				9E94C3AC1916980D00D60337 /* WSRFeedPublicationViewController.m in Sources */,
 				9E94C37219147B4600D60337 /* WSRSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

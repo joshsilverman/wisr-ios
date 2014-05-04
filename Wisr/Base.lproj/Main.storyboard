@@ -119,11 +119,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeedPublicationCell" id="aoB-xA-CwE" customClass="WSRFeedsPublicationCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeedPublicationCell" id="aoB-xA-CwE" customClass="WSRFeedsPublicationCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aoB-xA-CwE" id="xGs-lr-MOZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question Text" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-5C-Le0">
@@ -131,7 +131,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="questionTextLabel"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Akz-qa-tm7"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="Nvh-Ee-nYU"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -139,13 +139,14 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Kd8-5C-Le0" firstAttribute="top" secondItem="xGs-lr-MOZ" secondAttribute="top" constant="7" id="Qqh-0B-Eff"/>
-                                        <constraint firstAttribute="bottom" secondItem="Kd8-5C-Le0" secondAttribute="bottom" constant="6" id="dj9-kt-Vqr"/>
-                                        <constraint firstItem="Kd8-5C-Le0" firstAttribute="leading" secondItem="xGs-lr-MOZ" secondAttribute="leading" constant="20" id="u3o-8K-JHl"/>
+                                        <constraint firstItem="Kd8-5C-Le0" firstAttribute="leading" secondItem="xGs-lr-MOZ" secondAttribute="leading" constant="20" id="V8y-ek-UHR"/>
+                                        <constraint firstAttribute="trailing" secondItem="Kd8-5C-Le0" secondAttribute="trailing" constant="14" id="kT8-LI-gOe"/>
+                                        <constraint firstItem="Kd8-5C-Le0" firstAttribute="top" secondItem="xGs-lr-MOZ" secondAttribute="top" constant="7" id="z3u-Wt-0AJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="questionTextLabel" destination="Kd8-5C-Le0" id="Seh-WO-7x8"/>
+                                    <segue destination="8lM-0d-7aG" kind="push" id="hC1-Cc-2Oo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -159,6 +160,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COP-rD-WVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1647" y="-191"/>
+        </scene>
+        <!--Feed Publication View Controller-->
+        <scene sceneID="ub3-eY-iVm">
+            <objects>
+                <viewController id="8lM-0d-7aG" customClass="WSRFeedPublicationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z9t-Yt-g42"/>
+                        <viewControllerLayoutGuide type="bottom" id="p2r-VI-BUl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PBC-h1-dSN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eCc-uA-cfZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9WZ-pL-4gO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2103" y="-191"/>
         </scene>
         <!--Navigation Controller - Subjects-->
         <scene sceneID="2Tm-FQ-NgX">
