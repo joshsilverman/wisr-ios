@@ -11,6 +11,7 @@
 @interface WSRFeedPublication : NSObject
 
 @property (nonatomic, copy) NSString *questionText;
+@property (nonatomic, copy) NSDictionary *answers;
 
 - (id)initWithJSONData:(NSDictionary*)data;
 

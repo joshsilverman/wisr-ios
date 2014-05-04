@@ -28,6 +28,7 @@
 		9E94C3A419156F2000D60337 /* WSRFeedPublication.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C3A319156F2000D60337 /* WSRFeedPublication.m */; };
 		9E94C3A719159BEA00D60337 /* WSRFeedsPublicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C3A619159BEA00D60337 /* WSRFeedsPublicationCell.m */; };
 		9E94C3AC1916980D00D60337 /* WSRFeedPublicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C3AB1916980D00D60337 /* WSRFeedPublicationViewController.m */; };
+		9E94C3AF1916E57600D60337 /* WSRAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C3AE1916E57600D60337 /* WSRAnswerCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		9E94C3A619159BEA00D60337 /* WSRFeedsPublicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRFeedsPublicationCell.m; path = Feeds/WSRFeedsPublicationCell.m; sourceTree = "<group>"; };
 		9E94C3AA1916980D00D60337 /* WSRFeedPublicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRFeedPublicationViewController.h; path = Feeds/FeedPublications/WSRFeedPublicationViewController.h; sourceTree = "<group>"; };
 		9E94C3AB1916980D00D60337 /* WSRFeedPublicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRFeedPublicationViewController.m; path = Feeds/FeedPublications/WSRFeedPublicationViewController.m; sourceTree = "<group>"; };
+		9E94C3AD1916E57600D60337 /* WSRAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRAnswerCell.h; path = Feeds/FeedPublications/WSRAnswerCell.h; sourceTree = "<group>"; };
+		9E94C3AE1916E57600D60337 /* WSRAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRAnswerCell.m; path = Feeds/FeedPublications/WSRAnswerCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +218,8 @@
 				9E94C3A319156F2000D60337 /* WSRFeedPublication.m */,
 				9E94C3AA1916980D00D60337 /* WSRFeedPublicationViewController.h */,
 				9E94C3AB1916980D00D60337 /* WSRFeedPublicationViewController.m */,
+				9E94C3AD1916E57600D60337 /* WSRAnswerCell.h */,
+				9E94C3AE1916E57600D60337 /* WSRAnswerCell.m */,
 			);
 			name = FeedPublications;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				9E94C3A419156F2000D60337 /* WSRFeedPublication.m in Sources */,
 				9E94C36519147B4600D60337 /* main.m in Sources */,
 				9E94C36919147B4600D60337 /* WSRAppDelegate.m in Sources */,
+				9E94C3AF1916E57600D60337 /* WSRAnswerCell.m in Sources */,
 				9E94C3A119156B8F00D60337 /* WSRFeedsViewController.m in Sources */,
 				9E94C39D19152D6800D60337 /* WSRApi.m in Sources */,
 				9E94C396191486D600D60337 /* WSRAsker.m in Sources */,

@@ -15,6 +15,7 @@
     self = [super init];
     if (self) {
         self.questionText = data[@"_question"][@"text"];
+        self.answers = data[@"_answers"];
     }
     return self;
 }
