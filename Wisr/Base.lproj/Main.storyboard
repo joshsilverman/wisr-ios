@@ -126,18 +126,23 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Question Text" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-5C-Le0">
-                                            <rect key="frame" x="20" y="6" width="280" height="29"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question Text" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-5C-Le0">
+                                            <rect key="frame" x="20" y="7" width="286" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration" label="questionTextLabel"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="Nvh-Ee-nYU"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Akz-qa-tm7"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Kd8-5C-Le0" firstAttribute="top" secondItem="xGs-lr-MOZ" secondAttribute="top" constant="7" id="Qqh-0B-Eff"/>
+                                        <constraint firstAttribute="bottom" secondItem="Kd8-5C-Le0" secondAttribute="bottom" constant="6" id="dj9-kt-Vqr"/>
+                                        <constraint firstItem="Kd8-5C-Le0" firstAttribute="leading" secondItem="xGs-lr-MOZ" secondAttribute="leading" constant="20" id="u3o-8K-JHl"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="questionTextLabel" destination="Kd8-5C-Le0" id="Seh-WO-7x8"/>
