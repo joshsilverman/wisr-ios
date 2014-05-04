@@ -11,10 +11,9 @@
 #import "WSRFeedPublication.h"
 #import "WSRAsker.h"
 #import "WSRFeedsPublicationCell.h"
+#import "WSRFeedPublicationViewController.h"
 
 @protocol WSRFeedsViewControllerDelegate <NSObject>
-
-//- (void)feedsControllerDone;
 
 @end
 

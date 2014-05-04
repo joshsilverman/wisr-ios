@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WSRFeedPublication.h"
 
 @interface WSRFeedPublicationViewController : UIViewController
+
+@property (nonatomic, strong) WSRFeedPublication *feedPublication;
+@property (nonatomic, strong) NSURLSession *session;
+
+@property (nonatomic, weak) IBOutlet UILabel *questionText;
 
 @end

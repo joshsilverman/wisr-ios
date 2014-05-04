@@ -168,16 +168,13 @@
 }
 */
 
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    WSRFeedPublicationViewController *feedPubController = segue.destinationViewController;
+    feedPubController.session = _session;
+    
+    WSRFeedPublication *pub = _feedPublications[[self.tableView indexPathForSelectedRow].row];
+    feedPubController.feedPublication = pub;
 }
-
- */
 
 @end
