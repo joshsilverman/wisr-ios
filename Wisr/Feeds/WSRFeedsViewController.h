@@ -14,7 +14,7 @@
 
 @protocol WSRFeedsViewControllerDelegate <NSObject>
 
-- (void)feedsControllerDone;
+//- (void)feedsControllerDone;
 
 @end
 

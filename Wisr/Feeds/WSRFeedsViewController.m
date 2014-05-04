@@ -10,7 +10,6 @@
 
 @interface WSRFeedsViewController ()
 @property (nonatomic, strong) NSArray *feedPublications;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 @end
 
 @implementation WSRFeedsViewController
@@ -104,7 +103,6 @@
     static NSString *CellIdentifier = @"FeedPublicationCell";
     WSRFeedsPublicationCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-//    WSRFeedPublication *pub = _feedPublications[indexPath.row];
     [self configureCell:cell forRowAtIndexPath:indexPath];
     
     return cell;
@@ -129,11 +127,6 @@
     CGSize size = [content sizeWithFont:font constrainedToSize:maxSize lineBreakMode:NSLineBreakByWordWrapping];
 
     return size.height + 14;
-}
-
-- (IBAction)done:(id)sender
-{
-    [self.delegate feedsControllerDone];
 }
 
 /*
