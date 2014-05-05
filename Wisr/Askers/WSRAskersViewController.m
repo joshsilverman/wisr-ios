@@ -82,6 +82,8 @@
                                 [self.tableView reloadData];
                             });
                         }
+                    } else {
+                        [WSRApi noConnectionAlert];
                     }
                 }];
     

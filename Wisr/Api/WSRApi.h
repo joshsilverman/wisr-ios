@@ -13,5 +13,6 @@ extern NSString * const baseURLStr;
 @interface WSRApi : NSObject
 
 + (NSURL*)URLForCollection:(NSString*)resource;
++ (void)noConnectionAlert;
 
 @end
