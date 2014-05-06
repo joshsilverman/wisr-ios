@@ -12,7 +12,9 @@ extern NSString * const baseURLStr;
 
 @interface WSRApi : NSObject
 
++ (NSURLSession*)getSession;
 + (NSURL*)URLForCollection:(NSString*)resource;
 + (void)noConnectionAlert;
++ (void)getJSON:(NSURL*)url withSuccessHandler:(void (^)(NSArray *JSON))successHandler;
 
 @end

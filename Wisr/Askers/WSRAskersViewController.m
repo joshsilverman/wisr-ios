@@ -30,8 +30,6 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-        _session = [NSURLSession sessionWithConfiguration:config];
     }
     
     return self;
@@ -45,49 +43,26 @@
 
 - (void)fetchAskers;
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    NSURLSessionDataTask *dataTask =
-    [self.session dataTaskWithURL:[WSRApi URLForCollection:@"askers"]
-                completionHandler:^(NSData *data,
-                                    NSURLResponse *response,
-                                    NSError *error) {
-                    if (!error) {
-                        NSHTTPURLResponse *httpResp = (NSHTTPURLResponse*) response;
-                        if (httpResp.statusCode == 200) {
-                            NSError *jsonError;
-                            
-                            NSArray *askersJSON =
-                            [NSJSONSerialization JSONObjectWithData:data
-                                                            options:NSJSONReadingAllowFragments
-                                                              error:&jsonError];
-                            
-                            NSMutableArray *askersFound = [[NSMutableArray alloc] init];
-                            
-                            if (!jsonError) {
-                                for (NSDictionary *data in askersJSON) {
-                                    if (![data[@"published"] isKindOfClass:[NSNull class]]
-                                        && ![data[@"subject"] isKindOfClass:[NSNull class]]
-                                        && data[@"published"]) {
-                                        
-                                        WSRAsker *asker = [[WSRAsker alloc] initWithJSONData:data];
-                                        [askersFound addObject:asker];
-                                    }
-                                }
-                            }
-                        
-                            self.askers = askersFound;
-
-                            dispatch_async(dispatch_get_main_queue(), ^{
-                                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                                [self.tableView reloadData];
-                            });
-                        }
-                    } else {
-                        [WSRApi noConnectionAlert];
-                    }
-                }];
-    
-    [dataTask resume];
+    NSMutableArray *askersFound = [[NSMutableArray alloc] init];
+    [WSRApi getJSON:[WSRApi URLForCollection:@"askers"]
+ withSuccessHandler:^(NSArray *JSON){
+     for (NSDictionary *data in JSON) {
+         if (![data[@"published"] isKindOfClass:[NSNull class]]
+             && ![data[@"subject"] isKindOfClass:[NSNull class]]
+             && data[@"published"]) {
+             
+             WSRAsker *asker = [[WSRAsker alloc] initWithJSONData:data];
+             [askersFound addObject:asker];
+             
+             self.askers = askersFound;
+             
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                 [self.tableView reloadData];
+             });
+         }
+     }
+ }];
 }
 
 - (void)didReceiveMemoryWarning

@@ -12,6 +12,20 @@ NSString * const baseURLStr = @"http://wisr.com";
 
 @implementation WSRApi
 
++ (NSURLSession*)getSession
+{
+    static NSURLSession *session;
+    
+    if (session) {
+        return session;
+    } else {
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        session = [NSURLSession sessionWithConfiguration:config];
+    }
+    
+    return session;
+}
+
 + (NSURL*)URLForCollection:(NSString*)resource
 {
     NSString *urlWithParamsStr = [NSString stringWithFormat:@"%@/%@.json",
@@ -32,6 +46,38 @@ NSString * const baseURLStr = @"http://wisr.com";
                                           otherButtonTitles:nil];
     
     [alert show];
+}
+
++ (void)getJSON:(NSURL*)url withSuccessHandler:(void (^)(NSArray *JSON))successHandler
+{
+    NSURLSession *session = [self getSession];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    NSURLSessionDataTask *dataTask =
+    [session dataTaskWithURL:url
+                completionHandler:^(NSData *data,
+                                    NSURLResponse *response,
+                                    NSError *error) {
+                    if (!error) {
+                        NSHTTPURLResponse *httpResp = (NSHTTPURLResponse*) response;
+                        if (httpResp.statusCode == 200) {
+                            NSError *jsonError;
+                            
+                            NSArray *JSON =
+                            [NSJSONSerialization JSONObjectWithData:data
+                                                            options:NSJSONReadingAllowFragments
+                                                              error:&jsonError];
+                            
+                            if (!jsonError) {
+                                successHandler(JSON);
+                            }
+                        }
+                    } else {
+                        [WSRApi noConnectionAlert];
+                    }
+                }];
+    
+    [dataTask resume];
 }
 
 @end
