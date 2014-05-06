@@ -53,15 +53,15 @@
              
              WSRAsker *asker = [[WSRAsker alloc] initWithJSONData:data];
              [askersFound addObject:asker];
-             
-             self.askers = askersFound;
-             
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                 [self.tableView reloadData];
-             });
          }
      }
+     
+     self.askers = askersFound;
+     
+     dispatch_async(dispatch_get_main_queue(), ^{
+         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+         [self.tableView reloadData];
+     });
  }];
 }
 
@@ -75,8 +75,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
