@@ -42,44 +42,21 @@
 
 - (void)fetchFeedPublications;
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    NSURLSessionDataTask *dataTask =
-    [self.session dataTaskWithURL:[WSRApi URLForCollection:_asker.subjectURL]
-                completionHandler:^(NSData *data,
-                                    NSURLResponse *response,
-                                    NSError *error) {
-                    if (!error) {
-                        NSHTTPURLResponse *httpResp = (NSHTTPURLResponse*) response;
-                        if (httpResp.statusCode == 200) {
-                            NSError *jsonError;
-                            
-                            NSArray *askersJSON =
-                            [NSJSONSerialization JSONObjectWithData:data
-                                                            options:NSJSONReadingAllowFragments
-                                                              error:&jsonError];
-                            
-                            NSMutableArray *feedPubs = [[NSMutableArray alloc] init];
-                            
-                            if (!jsonError) {
-                                for (NSDictionary *data in askersJSON) {
-                                    WSRFeedPublication *pub = [[WSRFeedPublication alloc] initWithJSONData:data];
-                                    [feedPubs addObject:pub];
-                                }
-                            }
-                            
-                            self.feedPublications = feedPubs;
-                            
-                            dispatch_async(dispatch_get_main_queue(), ^{
-                                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                                [self.tableView reloadData];
-                            });
-                        }
-                    } else {
-                        [WSRApi noConnectionAlert];
-                    }
-                }];
-    
-    [dataTask resume];
+    NSMutableArray *feedPubs = [[NSMutableArray alloc] init];
+    [WSRApi getJSON:[WSRApi URLForCollection:_asker.subjectURL]
+ withSuccessHandler:^(NSArray *JSON) {
+        for (NSDictionary *data in JSON) {
+            WSRFeedPublication *pub = [[WSRFeedPublication alloc] initWithJSONData:data];
+            [feedPubs addObject:pub];
+        }
+     
+        self.feedPublications = feedPubs;
+     
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [self.tableView reloadData];
+        });
+    }];
 }
 
 - (void)didReceiveMemoryWarning
