@@ -8,10 +8,9 @@
 
 #import "WSRAskersViewController.h"
 
-@interface WSRAskersViewController ()<WSRFeedsViewControllerDelegate>
+@interface WSRAskersViewController ()
 
 @property (nonatomic, strong) NSArray *askers;
-@property (nonatomic, strong) NSURLSession *session;
 
 @end
 
@@ -142,12 +141,11 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    WSRFeedsViewController *feed = segue.destinationViewController;
-    feed.delegate = self;
-    feed.session = _session;
+    WSRFeedViewController *feed = segue.destinationViewController;
     
     WSRAsker *asker =  _askers[[self.tableView indexPathForSelectedRow].row];
     feed.asker = asker;
 }
+
 
 @end

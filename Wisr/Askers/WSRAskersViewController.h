@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WSRAsker.h"
 #import "WSRApi.h"
-#import "WSRFeedsViewController.h"
+#import "WSRFeedViewController.h"
 
 @interface WSRAskersViewController : UITableViewController
 
