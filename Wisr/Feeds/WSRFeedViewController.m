@@ -41,9 +41,10 @@
 
 -(void)fetchFeed
 {
-    NSString *strURL = [NSString stringWithFormat:@"https://www.wisr.com/%@", self.asker.subjectURL];
+    NSString *strURL = [NSString stringWithFormat:@"http://localhost:3000/%@", self.asker.subjectURL];
     NSURL *url = [NSURL URLWithString:strURL];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:url];
+    [urlRequest setValue: @"phone" forHTTPHeaderField: @"Wisr-Variant"];
     [self.webView loadRequest:urlRequest];
 }
 

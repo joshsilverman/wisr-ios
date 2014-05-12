@@ -8,7 +8,8 @@
 
 #import "WSRApi.h"
 
-NSString * const baseURLStr = @"http://wisr.com";
+//NSString * const baseURLStr = @"https://www.wisr.com";
+NSString * const baseURLStr = @"http://localhost:3000";
 
 @implementation WSRApi
 
