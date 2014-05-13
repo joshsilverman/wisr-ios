@@ -27,25 +27,10 @@
     [self fetchFeed];
 }
 
-//- (UIWebView *)getWebView
-//{
-//    UIWebView *webView;
-//    NSArray *subviews = self.subviews;
-//    for(id view in subviews){
-//        if([view isKindOfClass:NSClassFromString(@"UIWebView")]){
-//            webView = view;
-//        }
-//    }
-//    return webView;
-//}
-
 -(void)fetchFeed
 {
-    NSString *strURL = [NSString stringWithFormat:@"http://localhost:3000/%@", self.asker.subjectURL];
-    NSURL *url = [NSURL URLWithString:strURL];
-    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:url];
-    [urlRequest setValue: @"phone" forHTTPHeaderField: @"Wisr-Variant"];
-    [self.webView loadRequest:urlRequest];
+    NSURL *url = [WSRWebViewNavigation URLforAsker:self.asker forResource:@"feed"];
+    [WSRWebViewNavigation navigate:self.webView withURL:url];
 }
 
 - (void)didReceiveMemoryWarning

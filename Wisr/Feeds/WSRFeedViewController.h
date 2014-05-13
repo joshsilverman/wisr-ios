@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WSRApi.h"
 #import "WSRAsker.h"
+#import "WSRWebViewNavigation.h"
 
 @interface WSRFeedViewController : UIViewController
 
