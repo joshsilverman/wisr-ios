@@ -13,7 +13,9 @@
 +(NSURL*)URLforAsker: (WSRAsker *)asker forResource:(NSString *)resource
 {
     if ([resource isEqualToString:@"feed"]) {
-        NSString *strURL = [NSString stringWithFormat:@"http://localhost:3000/%@", asker.subjectURL];
+        NSString *strURL = [NSString stringWithFormat:@"%@/%@",
+                            BaseURLStr,
+                            asker.subjectURL];
         NSURL *url = [NSURL URLWithString:strURL];
         return url;
     } else {

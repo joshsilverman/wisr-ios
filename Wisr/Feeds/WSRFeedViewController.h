@@ -10,6 +10,7 @@
 #import "WSRApi.h"
 #import "WSRAsker.h"
 #import "WSRWebViewNavigation.h"
+#import "UIColor+HexColors.h"
 
 @interface WSRFeedViewController : UIViewController
 

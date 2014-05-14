@@ -7,7 +7,6 @@
 //
 
 #import "WSRFeedViewController.h"
-#import "UIColor+HexColors.h"
 
 @interface WSRFeedViewController ()
 

@@ -9,7 +9,7 @@
 #import "WSRApi.h"
 
 //NSString * const baseURLStr = @"https://www.wisr.com";
-NSString * const baseURLStr = @"http://localhost:3000";
+NSString * const BaseURLStr = @"http://localhost:3000";
 
 @implementation WSRApi
 
@@ -30,7 +30,7 @@ NSString * const baseURLStr = @"http://localhost:3000";
 + (NSURL*)URLForCollection:(NSString*)resource
 {
     NSString *urlWithParamsStr = [NSString stringWithFormat:@"%@/%@.json",
-                                  baseURLStr,
+                                  BaseURLStr,
                                   resource];
     NSURL *url = [NSURL URLWithString:urlWithParamsStr];
     return url;

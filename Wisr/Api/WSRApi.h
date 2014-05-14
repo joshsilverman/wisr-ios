@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString * const baseURLStr;
-
 @interface WSRApi : NSObject
+
+extern NSString* const BaseURLStr;
 
 + (NSURLSession*)getSession;
 + (NSURL*)URLForCollection:(NSString*)resource;

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WSRAsker.h"
+#import "WSRApi.h"
 
 @interface WSRWebViewNavigation : NSObject
 
