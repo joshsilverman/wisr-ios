@@ -26,6 +26,7 @@
 		9E94C39D19152D6800D60337 /* WSRApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C39C19152D6800D60337 /* WSRApi.m */; };
 		9E94C3A119156B8F00D60337 /* WSRFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C3A019156B8F00D60337 /* WSRFeedViewController.m */; };
 		9EA5DA9D1922493100BD1C6D /* WSRWebViewNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA5DA9C1922493100BD1C6D /* WSRWebViewNavigation.m */; };
+		9ECFC7B9192396B100A6D39B /* UIColor+HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECFC7B8192396B100A6D39B /* UIColor+HexColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		9E94C3A019156B8F00D60337 /* WSRFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRFeedViewController.m; path = Feeds/WSRFeedViewController.m; sourceTree = "<group>"; };
 		9EA5DA9B1922493100BD1C6D /* WSRWebViewNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRWebViewNavigation.h; path = WebViewNavigation/WSRWebViewNavigation.h; sourceTree = "<group>"; };
 		9EA5DA9C1922493100BD1C6D /* WSRWebViewNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRWebViewNavigation.m; path = WebViewNavigation/WSRWebViewNavigation.m; sourceTree = "<group>"; };
+		9ECFC7B71923967200A6D39B /* UIColor+HexColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+HexColors.h"; path = "Lib/UIColor+HexColors.h"; sourceTree = "<group>"; };
+		9ECFC7B8192396B100A6D39B /* UIColor+HexColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+HexColors.m"; path = "Lib/UIColor+HexColors.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,7 @@
 		9E94C35E19147B4600D60337 /* Wisr */ = {
 			isa = PBXGroup;
 			children = (
+				9ECFC7B319230F2500A6D39B /* Lib */,
 				9E94C39A19152D1300D60337 /* Api */,
 				9E94C393191483F900D60337 /* Askers */,
 				9E94C39E19156AD700D60337 /* Feeds */,
@@ -207,6 +211,15 @@
 				9EA5DA9C1922493100BD1C6D /* WSRWebViewNavigation.m */,
 			);
 			name = WebViewNavigation;
+			sourceTree = "<group>";
+		};
+		9ECFC7B319230F2500A6D39B /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				9ECFC7B71923967200A6D39B /* UIColor+HexColors.h */,
+				9ECFC7B8192396B100A6D39B /* UIColor+HexColors.m */,
+			);
+			name = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +322,7 @@
 			files = (
 				9E94C39919148AD300D60337 /* WSRAskersViewController.m in Sources */,
 				9E94C36519147B4600D60337 /* main.m in Sources */,
+				9ECFC7B9192396B100A6D39B /* UIColor+HexColors.m in Sources */,
 				9E94C36919147B4600D60337 /* WSRAppDelegate.m in Sources */,
 				9E94C3A119156B8F00D60337 /* WSRFeedViewController.m in Sources */,
 				9E94C39D19152D6800D60337 /* WSRApi.m in Sources */,

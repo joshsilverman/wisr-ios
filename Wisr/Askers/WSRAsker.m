@@ -16,6 +16,7 @@
     if (self) {
         self.subject = data[@"subject"];
         self.subjectURL = data[@"subject_url"];
+        self.styles = data[@"styles"];
     }
     return self;
 }

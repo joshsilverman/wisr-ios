@@ -12,6 +12,7 @@
 
 @property (nonatomic, copy) NSString *subject;
 @property (nonatomic, copy) NSString *subjectURL;
+@property (nonatomic, copy) NSDictionary *styles;
 
 - (id)initWithJSONData:(NSDictionary*)data;
 
