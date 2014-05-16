@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WSRWebViewNavigation.h"
 
-@interface WSRSecondViewController : UIViewController
+@interface WSRProfileViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
 
 @end

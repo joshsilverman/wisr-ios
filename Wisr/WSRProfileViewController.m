@@ -6,18 +6,24 @@
 //  Copyright (c) 2014 Wisr. All rights reserved.
 //
 
-#import "WSRSecondViewController.h"
+#import "WSRProfileViewController.h"
 
-@interface WSRSecondViewController ()
+@interface WSRProfileViewController ()
 
 @end
 
-@implementation WSRSecondViewController
+@implementation WSRProfileViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self fetchProfile];
+}
+
+-(void)fetchProfile
+{
+    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/users/sign_in"];
+    [WSRWebViewNavigation navigate:self.webView withURL:url];
 }
 
 - (void)didReceiveMemoryWarning
