@@ -136,11 +136,11 @@
             </objects>
             <point key="canvasLocation" x="653" y="-191"/>
         </scene>
-        <!--Navigation Controller - Second-->
+        <!--Navigation Controller - Profile-->
         <scene sceneID="5Nu-cP-f2L">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L9f-cH-3WC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="Z7h-1E-pvt"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="second" id="Z7h-1E-pvt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2no-Nl-bTx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
