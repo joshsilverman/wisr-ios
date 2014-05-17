@@ -13,6 +13,7 @@
 @interface WSRWebViewNavigation : NSObject
 
 +(NSURL*)URLforAsker: (WSRAsker *)asker forResource:(NSString *)resource;
++(NSURL*)URLforAuth;
 
 +(void)navigate: (UIWebView *)webView withURL:(NSURL*)url;
 

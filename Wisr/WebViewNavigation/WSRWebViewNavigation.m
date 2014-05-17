@@ -23,6 +23,14 @@
     }
 }
 
++(NSURL*)URLforAuth
+{
+    NSString *strURL = [NSString stringWithFormat:@"%@/users/sign_in",
+                        BaseURLStr];
+    NSURL *url = [NSURL URLWithString:strURL];
+    return url;
+}
+
 +(void)navigate: (UIWebView *)webView withURL:(NSURL*)url
 {
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:url];
