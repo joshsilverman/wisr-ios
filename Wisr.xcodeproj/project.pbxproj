@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E347FC7192798D800FB3A41 /* WSRAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E347FC6192798D800FB3A41 /* WSRAuthenticationViewController.m */; };
 		9E94C35919147B4600D60337 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E94C35819147B4600D60337 /* Foundation.framework */; };
 		9E94C35B19147B4600D60337 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E94C35A19147B4600D60337 /* CoreGraphics.framework */; };
 		9E94C35D19147B4600D60337 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E94C35C19147B4600D60337 /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E347FC5192798D800FB3A41 /* WSRAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRAuthenticationViewController.h; path = Authentication/WSRAuthenticationViewController.h; sourceTree = "<group>"; };
+		9E347FC6192798D800FB3A41 /* WSRAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRAuthenticationViewController.m; path = Authentication/WSRAuthenticationViewController.m; sourceTree = "<group>"; };
 		9E94C35519147B4600D60337 /* Wisr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wisr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E94C35819147B4600D60337 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9E94C35A19147B4600D60337 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -97,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E347FC4192792BE00FB3A41 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				9E347FC5192798D800FB3A41 /* WSRAuthenticationViewController.h */,
+				9E347FC6192798D800FB3A41 /* WSRAuthenticationViewController.m */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
 		9E3AF74A1924EEC0005EE6EB /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,12 +151,13 @@
 		9E94C35E19147B4600D60337 /* Wisr */ = {
 			isa = PBXGroup;
 			children = (
-				9ECFC7B319230F2500A6D39B /* Lib */,
 				9E94C39A19152D1300D60337 /* Api */,
+				9E347FC4192792BE00FB3A41 /* Authentication */,
 				9E94C393191483F900D60337 /* Askers */,
 				9E94C39E19156AD700D60337 /* Feeds */,
 				9E3AF74A1924EEC0005EE6EB /* Profile */,
 				9EA5DA9A192248AB00BD1C6D /* WebViewNavigation */,
+				9ECFC7B319230F2500A6D39B /* Lib */,
 				9E94C36719147B4600D60337 /* WSRAppDelegate.h */,
 				9E94C36819147B4600D60337 /* WSRAppDelegate.m */,
 				9E94C36A19147B4600D60337 /* Main.storyboard */,
@@ -331,6 +344,7 @@
 				9E94C39919148AD300D60337 /* WSRAskersViewController.m in Sources */,
 				9E94C36519147B4600D60337 /* main.m in Sources */,
 				9ECFC7B9192396B100A6D39B /* UIColor+HexColors.m in Sources */,
+				9E347FC7192798D800FB3A41 /* WSRAuthenticationViewController.m in Sources */,
 				9E94C36919147B4600D60337 /* WSRAppDelegate.m in Sources */,
 				9E94C3A119156B8F00D60337 /* WSRFeedViewController.m in Sources */,
 				9E94C39D19152D6800D60337 /* WSRApi.m in Sources */,

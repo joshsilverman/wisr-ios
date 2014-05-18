@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="phx-po-nAK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -36,7 +36,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1179" y="498"/>
+            <point key="canvasLocation" x="1189" y="498"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="mTe-Gj-qQK">
@@ -58,10 +58,30 @@
             </objects>
             <point key="canvasLocation" x="1665" y="-191"/>
         </scene>
+        <!--Authentication View Controller-->
+        <scene sceneID="Sdb-uU-0PF">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fk0-2K-kUn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="Authentication" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tiu-1g-ZQ2" customClass="WSRAuthenticationViewController" sceneMemberID="viewController">
+                    <webView key="view" contentMode="scaleToFill" id="6C7-gF-62h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <outlet property="delegate" destination="Tiu-1g-ZQ2" id="X9Y-gr-Hea"/>
+                        </connections>
+                    </webView>
+                    <connections>
+                        <outlet property="webView" destination="6C7-gF-62h" id="2Jk-xr-gAz"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-351" y="180"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
             <objects>
-                <tabBarController id="8YX-ce-x5E" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8YX-ce-x5E" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="JQR-rB-NYL">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
@@ -157,6 +177,18 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6UV-vo-f8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="653" y="498"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZV0-u3-bRk">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="phx-po-nAK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IPE-uc-Lhd">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vpe-W8-8aK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-834" y="180"/>
         </scene>
     </scenes>
     <resources>

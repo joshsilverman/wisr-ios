@@ -13,10 +13,13 @@
 +(NSURL*)URLforAsker: (WSRAsker *)asker forResource:(NSString *)resource
 {
     if ([resource isEqualToString:@"feed"]) {
-        NSString *strURL = [NSString stringWithFormat:@"%@/%@",
+        NSString *authToken = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
+        NSString *strURL = [NSString stringWithFormat:@"%@/%@?a=%@",
                             BaseURLStr,
-                            asker.subjectURL];
-        NSURL *url = [NSURL URLWithString:strURL];
+                            asker.subjectURL,
+                            authToken];
+        NSString *escapedURLStr = [strURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSURL *url = [NSURL URLWithString:escapedURLStr];
         return url;
     } else {
         return nil;
@@ -25,8 +28,14 @@
 
 +(NSURL*)URLforAuth
 {
-    NSString *strURL = [NSString stringWithFormat:@"%@/users/sign_in",
-                        BaseURLStr];
+    NSString *strURL = [NSString stringWithFormat:@"%@/users/sign_in", BaseURLStr];
+    NSURL *url = [NSURL URLWithString:strURL];
+    return url;
+}
+
++(NSURL*)URLforAuthCallback
+{
+    NSString *strURL = [NSString stringWithFormat:@"%@/users/auth/twitter/callback", BaseURLStr];
     NSURL *url = [NSURL URLWithString:strURL];
     return url;
 }

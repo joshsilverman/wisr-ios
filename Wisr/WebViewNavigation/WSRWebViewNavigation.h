@@ -14,6 +14,7 @@
 
 +(NSURL*)URLforAsker: (WSRAsker *)asker forResource:(NSString *)resource;
 +(NSURL*)URLforAuth;
++(NSURL*)URLforAuthCallback;
 
 +(void)navigate: (UIWebView *)webView withURL:(NSURL*)url;
 

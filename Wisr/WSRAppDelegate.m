@@ -17,6 +17,19 @@
 {
     [self initAppearance];
     
+    // Override point for customization after application launch.
+    NSString *token = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
+    
+    NSString *controllerId = token ? @"TabBar" : @"Authentication";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *initViewController = [storyboard instantiateViewControllerWithIdentifier:controllerId];
+    
+    // always assumes token is valid - should probably check in a real app
+    if (token) {
+        [self.window setRootViewController:initViewController];
+    } else {
+        [(UINavigationController *)self.window.rootViewController pushViewController:initViewController animated:NO];
+    }
     return YES;
 }
 
