@@ -52,7 +52,7 @@
         
         UIViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBar"];
         self.navigationController.navigationBar.hidden = YES;
-        [self.navigationController pushViewController:controller animated:YES];
+        [self.navigationController setViewControllers:[NSArray arrayWithObject:controller] animated:YES];
     }
 }
 
