@@ -15,6 +15,7 @@
 @interface WSRFeedViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationBarItem;
 @property (nonatomic, strong) WSRAsker *asker;
 
 @end

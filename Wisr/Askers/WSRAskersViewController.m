@@ -145,6 +145,7 @@
     
     WSRAsker *asker =  _askers[[self.tableView indexPathForSelectedRow].row];
     feed.asker = asker;
+    feed.navigationBarItem.title = asker.subject;
 }
 
 
