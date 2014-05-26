@@ -47,7 +47,6 @@
     
     [[UIToolbar appearance] setBarStyle:UIBarStyleBlackOpaque];
     [[UIToolbar appearance] setBarTintColor:byteClubBlue];
-    
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

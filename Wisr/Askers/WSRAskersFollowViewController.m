@@ -11,6 +11,7 @@
 @interface WSRAskersFollowViewController ()
 
 @property (nonatomic, strong) NSArray *askers;
+@property (nonatomic, strong) NSArray *followIds;
 
 @end
 
@@ -37,7 +38,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self fetchAskers];
+    [self fetchFollows];
+}
+
+- (void)fetchFollows;
+{
+    [WSRApi getJSON:[WSRApi URLWithToken: @"users/wisr_follow_ids"]
+ withSuccessHandler:^(NSArray *JSON){
+     self.followIds = JSON;
+     dispatch_async(dispatch_get_main_queue(), ^{
+         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+         [self fetchAskers];
+     });
+ }];
 }
 
 - (void)fetchAskers;
@@ -79,8 +92,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
     return [self.askers count];
 }
 
@@ -99,8 +110,10 @@
     
     UISwitch *switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
     cell.accessoryView = switchView;
-                
-    [switchView setOn:NO animated:NO];
+    
+    BOOL switchState =  [self.followIds containsObject:@(asker.id)];
+    
+    [switchView setOn:switchState animated:NO];
     [switchView addTarget:self
                    action:@selector(switchChanged:)
          forControlEvents:UIControlEventValueChanged];

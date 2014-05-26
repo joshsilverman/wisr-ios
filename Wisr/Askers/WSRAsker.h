@@ -10,6 +10,7 @@
 
 @interface WSRAsker : NSObject
 
+@property (nonatomic) NSInteger id;
 @property (nonatomic, copy) NSString *subject;
 @property (nonatomic, copy) NSString *subjectURL;
 @property (nonatomic, copy) NSDictionary *styles;

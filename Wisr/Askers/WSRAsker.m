@@ -14,6 +14,7 @@
 {
     self = [super init];
     if (self) {
+        self.id = [data[@"id"] integerValue];
         self.subject = data[@"subject"];
         self.subjectURL = data[@"subject_url"];
         self.styles = data[@"styles"];

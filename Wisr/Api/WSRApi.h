@@ -14,6 +14,8 @@ extern NSString* const BaseURLStr;
 
 + (NSURLSession*)getSession;
 + (NSURL*)URLForCollection:(NSString*)resource;
++ (NSURL*)URLWithToken: (NSString *)path;
+
 + (void)noConnectionAlert;
 + (void)getJSON:(NSURL*)url withSuccessHandler:(void (^)(NSArray *JSON))successHandler;
 

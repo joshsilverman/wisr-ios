@@ -8,8 +8,8 @@
 
 #import "WSRApi.h"
 
-NSString * const BaseURLStr = @"https://www.wisr.com";
-// NSString * const BaseURLStr = @"http://localhost:3000";
+//NSString * const BaseURLStr = @"https://www.wisr.com";
+NSString * const BaseURLStr = @"http://localhost:3000";
 
 @implementation WSRApi
 
@@ -33,6 +33,19 @@ NSString * const BaseURLStr = @"https://www.wisr.com";
                                   BaseURLStr,
                                   resource];
     NSURL *url = [NSURL URLWithString:urlWithParamsStr];
+    return url;
+}
+
++(NSURL*)URLWithToken: (NSString *)path
+{
+    NSString *authToken = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
+    NSString *strURL = [NSString stringWithFormat:@"%@/%@.json?a=%@",
+                        BaseURLStr,
+                        path,
+                        authToken];
+    NSString *escapedURLStr = [strURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:escapedURLStr];
+    
     return url;
 }
 
