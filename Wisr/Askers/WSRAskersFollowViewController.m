@@ -157,14 +157,5 @@
  }
  */
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    WSRFeedViewController *feed = segue.destinationViewController;
-    
-    WSRAsker *asker =  _askers[[self.tableView indexPathForSelectedRow].row];
-    feed.asker = asker;
-    feed.navigationBarItem.title = asker.subject;
-}
-
 
 @end

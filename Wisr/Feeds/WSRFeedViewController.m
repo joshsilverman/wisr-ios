@@ -25,16 +25,17 @@
 {
     [super viewDidLoad];
     [self fetchFeed];
+    
+    NSString *bg_color = self.asker.styles[@"bg_color"];
+    NSString *bg_color_stripped = [bg_color substringFromIndex:1];
+    self.webView.backgroundColor = [UIColor colorWithHexString:bg_color_stripped];
+    self.webView.opaque = NO;
 }
 
 -(void)fetchFeed
 {
     NSURL *url = [WSRWebViewNavigation URLforAsker:self.asker forResource:@"feed"];
     [WSRWebViewNavigation navigate:self.webView withURL:url];
-    
-    NSString *bg_color = self.asker.styles[@"bg_color"];
-    NSString *bg_color_stripped = [bg_color substringFromIndex:1];
-    self.webView.backgroundColor = [UIColor colorWithHexString:bg_color_stripped];
 }
 
 - (void)didReceiveMemoryWarning
