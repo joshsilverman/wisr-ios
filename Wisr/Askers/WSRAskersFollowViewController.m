@@ -124,6 +124,19 @@
 - (void) switchChanged:(id)sender {
     UISwitch* switchControl = sender;
     NSLog( @"The switch is %@", switchControl.on ? @"ON" : @"OFF" );
+    
+    NSURL *url = [WSRApi URLWithToken:@"relationships"];
+    
+    NSData *data;
+    [data setValue:@"1" forKey:@"follower_id"];
+    [data setValue:@"1" forKey:@"followed_id"];
+    
+//    [WSRApi post:url withData:data withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//        NSLog(@"Switched");
+//    }];
+    NSLog(@"test 1");
+    [WSRApi post:url withData:nil withCompletionHandler:nil];
+    NSLog(@"test 2");
 }
 
 - (void)feedsControllerDone

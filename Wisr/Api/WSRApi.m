@@ -94,4 +94,25 @@ NSString * const BaseURLStr = @"http://localhost:3000";
     [dataTask resume];
 }
 
++ (void)post:(NSURL*)url withData:(NSData*)data withCompletionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))successHandler
+{
+    NSURLSession *session = [self getSession];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *postString = @"follower_id=7&followed_id=2";
+    NSData *ddata = [postString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [request setHTTPBody:ddata];
+    [request setValue:[NSString stringWithFormat:@"%u", [ddata length]] forHTTPHeaderField:@"Content-Length"];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSLog(@"hey");
+    }];
+    
+    [task resume];
+}
+
 @end
