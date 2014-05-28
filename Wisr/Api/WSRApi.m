@@ -8,8 +8,8 @@
 
 #import "WSRApi.h"
 
-//NSString * const BaseURLStr = @"https://www.wisr.com";
-NSString * const BaseURLStr = @"http://localhost:3000";
+NSString * const BaseURLStr = @"https://www.wisr.com";
+//NSString * const BaseURLStr = @"http://localhost:3000";
 
 @implementation WSRApi
 
@@ -94,7 +94,7 @@ NSString * const BaseURLStr = @"http://localhost:3000";
     [dataTask resume];
 }
 
-+ (void)post:(NSURL*)url withData:(NSData*)data withCompletionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))successHandler
++ (void)post:(NSURL*)url withData:(NSDictionary*)params withCompletionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))successHandler
 {
     NSURLSession *session = [self getSession];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -102,11 +102,15 @@ NSString * const BaseURLStr = @"http://localhost:3000";
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
     
-    NSString *postString = @"follower_id=7&followed_id=2";
-    NSData *ddata = [postString dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *postString = @"";
+    for (NSString *key in [params allKeys]) {
+        postString = [NSString stringWithFormat:@"%@&%@=%@",
+                      postString, key, params[key]];
+    }
+    NSData *data = [postString dataUsingEncoding:NSUTF8StringEncoding];
     
-    [request setHTTPBody:ddata];
-    [request setValue:[NSString stringWithFormat:@"%u", [ddata length]] forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody:data];
+    [request setValue:[NSString stringWithFormat:@"%u", [data length]] forHTTPHeaderField:@"Content-Length"];
     
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSLog(@"hey");

@@ -18,6 +18,6 @@ extern NSString* const BaseURLStr;
 
 + (void)noConnectionAlert;
 + (void)getJSON:(NSURL*)url withSuccessHandler:(void (^)(NSArray *JSON))successHandler;
-+ (void)post:(NSURL*)url withData:(NSData*)data withCompletionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))successHandler;
++ (void)post:(NSURL*)url withData:(NSDictionary*)params withCompletionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))successHandler;
 
 @end
