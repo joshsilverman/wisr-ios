@@ -128,6 +128,14 @@
     NSIndexPath *indexPath = [tableView indexPathForCell:cell];
     WSRAsker *asker = (self.askers)[indexPath.row];
     
+    if (switchControl.isOn) {
+        [self switchedOn:switchControl forAsker:asker];
+    } else {
+        
+    }
+}
+
+- (void) switchedOn:(UISwitch*) switchControl forAsker:(WSRAsker*) asker {
     NSURL *url = [WSRApi URLWithToken:@"relationships"];
     NSDictionary *params = @{@"followed_id": [@(asker.id) stringValue]};
     
@@ -137,6 +145,7 @@
         }
     }];
 }
+
 
 - (void)feedsControllerDone
 {
