@@ -11,7 +11,7 @@
 @interface WSRAskersFollowViewController ()
 
 @property (nonatomic, strong) NSArray *askers;
-@property (nonatomic, strong) NSArray *followIds;
+@property (nonatomic, strong) NSMutableArray *followIds;
 
 @end
 
@@ -45,7 +45,7 @@
 {
     [WSRApi getJSON:[WSRApi URLWithToken: @"users/wisr_follow_ids"]
  withSuccessHandler:^(NSArray *JSON){
-     self.followIds = JSON;
+     self.followIds = [JSON mutableCopy];
      dispatch_async(dispatch_get_main_queue(), ^{
          [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
          [self fetchAskers];
@@ -132,7 +132,9 @@
     NSDictionary *params = @{@"followed_id": [@(asker.id) stringValue]};
     
     [WSRApi post:url withData:params withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSLog(@"Switched callback");
+        if (![self.followIds containsObject:@(asker.id)]) {
+            [self.followIds addObject:@(asker.id)];
+        }
     }];
 }
 
