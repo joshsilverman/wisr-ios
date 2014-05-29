@@ -123,20 +123,17 @@
 
 - (void) switchChanged:(id)sender {
     UISwitch* switchControl = sender;
-    NSLog( @"The switch is %@", switchControl.on ? @"ON" : @"OFF" );
+    UITableViewCell *cell = (UITableViewCell *)switchControl.superview.superview;
+    UITableView *tableView = (UITableView *)cell.superview.superview;
+    NSIndexPath *indexPath = [tableView indexPathForCell:cell];
+    WSRAsker *asker = (self.askers)[indexPath.row];
     
     NSURL *url = [WSRApi URLWithToken:@"relationships"];
+    NSDictionary *params = @{@"followed_id": [@(asker.id) stringValue]};
     
-    NSData *data;
-    [data setValue:@"1" forKey:@"follower_id"];
-    [data setValue:@"1" forKey:@"followed_id"];
-    
-//    [WSRApi post:url withData:data withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-//        NSLog(@"Switched");
-//    }];
-    NSLog(@"test 1");
-    [WSRApi post:url withData:nil withCompletionHandler:nil];
-    NSLog(@"test 2");
+    [WSRApi post:url withData:params withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSLog(@"Switched callback");
+    }];
 }
 
 - (void)feedsControllerDone

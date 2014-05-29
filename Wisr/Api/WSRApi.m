@@ -8,8 +8,8 @@
 
 #import "WSRApi.h"
 
-NSString * const BaseURLStr = @"https://www.wisr.com";
-//NSString * const BaseURLStr = @"http://localhost:3000";
+//NSString * const BaseURLStr = @"https://www.wisr.com";
+NSString * const BaseURLStr = @"http://localhost:3000";
 
 @implementation WSRApi
 
@@ -112,9 +112,10 @@ NSString * const BaseURLStr = @"https://www.wisr.com";
     [request setHTTPBody:data];
     [request setValue:[NSString stringWithFormat:@"%u", [data length]] forHTTPHeaderField:@"Content-Length"];
     
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSLog(@"hey");
-    }];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
+                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                successHandler(data, response, error);
+                                            }];
     
     [task resume];
 }
