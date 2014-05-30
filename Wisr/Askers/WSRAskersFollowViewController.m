@@ -131,7 +131,7 @@
     if (switchControl.isOn) {
         [self switchedOn:switchControl forAsker:asker];
     } else {
-        
+        [self switchedOff:switchControl forAsker:asker];
     }
 }
 
@@ -146,6 +146,16 @@
     }];
 }
 
+- (void) switchedOff:(UISwitch*) switchControl forAsker:(WSRAsker*) asker {
+    NSURL *url = [WSRApi URLWithToken:@"relationships/deactivate"];
+    NSDictionary *params = @{@"followed_id": [@(asker.id) stringValue]};
+    
+    [WSRApi post:url withData:params withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if ([self.followIds containsObject:@(asker.id)]) {
+            [self.followIds removeObject:@(asker.id)];
+        }
+    }];
+}
 
 - (void)feedsControllerDone
 {
