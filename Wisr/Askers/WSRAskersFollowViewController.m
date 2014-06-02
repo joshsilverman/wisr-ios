@@ -110,6 +110,7 @@
     
     UISwitch *switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
     cell.accessoryView = switchView;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     BOOL switchState =  [self.followIds containsObject:@(asker.id)];
     
