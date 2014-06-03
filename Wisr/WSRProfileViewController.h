@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WSRWebViewNavigation.h"
+#import "UIColor+HexColors.h"
 
 @interface WSRProfileViewController : UIViewController
 

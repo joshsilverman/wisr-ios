@@ -18,6 +18,10 @@
 {
     [super viewDidLoad];
     [self fetchProfile];
+    
+    NSString *bg_color_stripped = @"202734";
+    self.webView.backgroundColor = [UIColor colorWithHexString:bg_color_stripped];
+    self.webView.opaque = NO;
 }
 
 -(void)fetchProfile
