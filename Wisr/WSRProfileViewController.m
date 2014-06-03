@@ -22,7 +22,7 @@
 
 -(void)fetchProfile
 {
-    NSURL *url = [WSRWebViewNavigation URLforAuth];
+    NSURL *url = [WSRWebViewNavigation URLWithToken:@"feeds/index"];
     [WSRWebViewNavigation navigate:self.webView withURL:url];
 }
 
