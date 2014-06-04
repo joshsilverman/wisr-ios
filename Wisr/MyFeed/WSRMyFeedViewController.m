@@ -17,29 +17,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self fetchProfile];
 
     NSString *bg_color_stripped = @"202734";
     self.webView.backgroundColor = [UIColor colorWithHexString:bg_color_stripped];
     self.webView.opaque = NO;
 }
 
-//- (void)viewDidAppear:(BOOL)animated
-//{
-//    [super viewDidAppear:animated];
-//    [self fetchProfile];
-//    
-//    NSString *bg_color_stripped = @"202734";
-//    self.webView.backgroundColor = [UIColor colorWithHexString:bg_color_stripped];
-//    self.webView.opaque = NO;
-//}
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self fetchProfile];
+}
 
-//- (void)viewDidDisappear:(BOOL)animated
-//{
-//    [super viewDidDisappear:animated];
-//    
-//     [self.webView loadHTMLString:@"" baseURL:nil];
-//}
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self.webView loadHTMLString:@"" baseURL:nil];
+}
 
 -(void)fetchProfile
 {
