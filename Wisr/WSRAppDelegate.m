@@ -35,18 +35,23 @@
 
 - (void)initAppearance
 {
-    UIColor *byteClubBlue = [UIColor colorWithRed:61/255.0f
-                                            green:154/255.0f
-                                             blue:232/255.0f
-                                            alpha:1.0f];
+//    UIColor *byteClubBlue = [UIColor colorWithRed:61/255.0f
+//                                            green:154/255.0f
+//                                             blue:232/255.0f
+//                                            alpha:1.0f];
+    
+    UIColor *wisrColor = [UIColor colorWithHexString:@"202734"];
+    
+//    UIColor *wisrWhite = [UIColor whiteColor];
+//    [[UINavigationBar appearance] setBackgroundColor:wisrWhite];
     
     // Set appearance info
-    [[UITabBar appearance] setBarTintColor:byteClubBlue];
+    [[UITabBar appearance] setBarTintColor:wisrColor];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackOpaque];
-    [[UINavigationBar appearance] setBarTintColor:byteClubBlue];
+    [[UINavigationBar appearance] setBarTintColor:wisrColor];
     
     [[UIToolbar appearance] setBarStyle:UIBarStyleBlackOpaque];
-    [[UIToolbar appearance] setBarTintColor:byteClubBlue];
+    [[UIToolbar appearance] setBarTintColor:wisrColor];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

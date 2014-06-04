@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WSRAskersViewController.h"
 #import "WSRAsker.h"
+#import "UIColor+HexColors.h"
 
 @interface WSRAppDelegate : UIResponder <UIApplicationDelegate>
 
