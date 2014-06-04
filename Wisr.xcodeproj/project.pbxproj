@@ -15,7 +15,6 @@
 		9E94C36519147B4600D60337 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C36419147B4600D60337 /* main.m */; };
 		9E94C36919147B4600D60337 /* WSRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C36819147B4600D60337 /* WSRAppDelegate.m */; };
 		9E94C36C19147B4600D60337 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E94C36A19147B4600D60337 /* Main.storyboard */; };
-		9E94C37219147B4600D60337 /* WSRMyFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C37119147B4600D60337 /* WSRMyFeedViewController.m */; };
 		9E94C37419147B4600D60337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E94C37319147B4600D60337 /* Images.xcassets */; };
 		9E94C37B19147B4600D60337 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E94C37A19147B4600D60337 /* XCTest.framework */; };
 		9E94C37C19147B4600D60337 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E94C35819147B4600D60337 /* Foundation.framework */; };
@@ -27,6 +26,7 @@
 		9E94C39D19152D6800D60337 /* WSRApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C39C19152D6800D60337 /* WSRApi.m */; };
 		9E94C3A119156B8F00D60337 /* WSRFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C3A019156B8F00D60337 /* WSRFeedViewController.m */; };
 		9EA5DA9D1922493100BD1C6D /* WSRWebViewNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA5DA9C1922493100BD1C6D /* WSRWebViewNavigation.m */; };
+		9EC2B53C193F4C96005B81C7 /* WSRMyFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC2B53B193F4C96005B81C7 /* WSRMyFeedViewController.m */; };
 		9ECFC7B9192396B100A6D39B /* UIColor+HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECFC7B8192396B100A6D39B /* UIColor+HexColors.m */; };
 		9EF7DB5119326D09001078CD /* WSRAskersFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF7DB5019326D09001078CD /* WSRAskersFollowViewController.m */; };
 /* End PBXBuildFile section */
@@ -55,8 +55,6 @@
 		9E94C36719147B4600D60337 /* WSRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSRAppDelegate.h; sourceTree = "<group>"; };
 		9E94C36819147B4600D60337 /* WSRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSRAppDelegate.m; sourceTree = "<group>"; };
 		9E94C36B19147B4600D60337 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9E94C37019147B4600D60337 /* WSRMyFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSRMyFeedViewController.h; sourceTree = "<group>"; };
-		9E94C37119147B4600D60337 /* WSRMyFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSRMyFeedViewController.m; sourceTree = "<group>"; };
 		9E94C37319147B4600D60337 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9E94C37919147B4600D60337 /* WisrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WisrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E94C37A19147B4600D60337 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -73,6 +71,8 @@
 		9E94C3A019156B8F00D60337 /* WSRFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRFeedViewController.m; path = Feeds/WSRFeedViewController.m; sourceTree = "<group>"; };
 		9EA5DA9B1922493100BD1C6D /* WSRWebViewNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRWebViewNavigation.h; path = WebViewNavigation/WSRWebViewNavigation.h; sourceTree = "<group>"; };
 		9EA5DA9C1922493100BD1C6D /* WSRWebViewNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRWebViewNavigation.m; path = WebViewNavigation/WSRWebViewNavigation.m; sourceTree = "<group>"; };
+		9EC2B53A193F4C8B005B81C7 /* WSRMyFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRMyFeedViewController.h; path = MyFeed/WSRMyFeedViewController.h; sourceTree = "<group>"; };
+		9EC2B53B193F4C96005B81C7 /* WSRMyFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRMyFeedViewController.m; path = MyFeed/WSRMyFeedViewController.m; sourceTree = "<group>"; };
 		9ECFC7B71923967200A6D39B /* UIColor+HexColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+HexColors.h"; path = "Lib/UIColor+HexColors.h"; sourceTree = "<group>"; };
 		9ECFC7B8192396B100A6D39B /* UIColor+HexColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+HexColors.m"; path = "Lib/UIColor+HexColors.m"; sourceTree = "<group>"; };
 		9EF7DB4F19326D09001078CD /* WSRAskersFollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRAskersFollowViewController.h; path = Askers/WSRAskersFollowViewController.h; sourceTree = "<group>"; };
@@ -115,8 +115,8 @@
 		9E3AF74A1924EEC0005EE6EB /* MyFeed */ = {
 			isa = PBXGroup;
 			children = (
-				9E94C37019147B4600D60337 /* WSRMyFeedViewController.h */,
-				9E94C37119147B4600D60337 /* WSRMyFeedViewController.m */,
+				9EC2B53A193F4C8B005B81C7 /* WSRMyFeedViewController.h */,
+				9EC2B53B193F4C96005B81C7 /* WSRMyFeedViewController.m */,
 			);
 			name = MyFeed;
 			sourceTree = "<group>";
@@ -355,8 +355,8 @@
 				9E94C3A119156B8F00D60337 /* WSRFeedViewController.m in Sources */,
 				9E94C39D19152D6800D60337 /* WSRApi.m in Sources */,
 				9E94C396191486D600D60337 /* WSRAsker.m in Sources */,
+				9EC2B53C193F4C96005B81C7 /* WSRMyFeedViewController.m in Sources */,
 				9EA5DA9D1922493100BD1C6D /* WSRWebViewNavigation.m in Sources */,
-				9E94C37219147B4600D60337 /* WSRMyFeedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
