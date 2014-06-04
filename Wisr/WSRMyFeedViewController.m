@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Wisr. All rights reserved.
 //
 
-#import "WSRProfileViewController.h"
+#import "WSRMyFeedViewController.h"
 
-@interface WSRProfileViewController ()
+@interface WSRMyFeedViewController ()
 
 @end
 
-@implementation WSRProfileViewController
+@implementation WSRMyFeedViewController
 
 - (void)viewDidLoad
 {

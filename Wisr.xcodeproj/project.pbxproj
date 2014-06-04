@@ -15,7 +15,7 @@
 		9E94C36519147B4600D60337 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C36419147B4600D60337 /* main.m */; };
 		9E94C36919147B4600D60337 /* WSRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C36819147B4600D60337 /* WSRAppDelegate.m */; };
 		9E94C36C19147B4600D60337 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E94C36A19147B4600D60337 /* Main.storyboard */; };
-		9E94C37219147B4600D60337 /* WSRProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C37119147B4600D60337 /* WSRProfileViewController.m */; };
+		9E94C37219147B4600D60337 /* WSRMyFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C37119147B4600D60337 /* WSRMyFeedViewController.m */; };
 		9E94C37419147B4600D60337 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E94C37319147B4600D60337 /* Images.xcassets */; };
 		9E94C37B19147B4600D60337 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E94C37A19147B4600D60337 /* XCTest.framework */; };
 		9E94C37C19147B4600D60337 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E94C35819147B4600D60337 /* Foundation.framework */; };
@@ -55,8 +55,8 @@
 		9E94C36719147B4600D60337 /* WSRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSRAppDelegate.h; sourceTree = "<group>"; };
 		9E94C36819147B4600D60337 /* WSRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSRAppDelegate.m; sourceTree = "<group>"; };
 		9E94C36B19147B4600D60337 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9E94C37019147B4600D60337 /* WSRProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSRProfileViewController.h; sourceTree = "<group>"; };
-		9E94C37119147B4600D60337 /* WSRProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSRProfileViewController.m; sourceTree = "<group>"; };
+		9E94C37019147B4600D60337 /* WSRMyFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSRMyFeedViewController.h; sourceTree = "<group>"; };
+		9E94C37119147B4600D60337 /* WSRMyFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WSRMyFeedViewController.m; sourceTree = "<group>"; };
 		9E94C37319147B4600D60337 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9E94C37919147B4600D60337 /* WisrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WisrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E94C37A19147B4600D60337 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -112,13 +112,13 @@
 			name = Authentication;
 			sourceTree = "<group>";
 		};
-		9E3AF74A1924EEC0005EE6EB /* Profile */ = {
+		9E3AF74A1924EEC0005EE6EB /* MyFeed */ = {
 			isa = PBXGroup;
 			children = (
-				9E94C37019147B4600D60337 /* WSRProfileViewController.h */,
-				9E94C37119147B4600D60337 /* WSRProfileViewController.m */,
+				9E94C37019147B4600D60337 /* WSRMyFeedViewController.h */,
+				9E94C37119147B4600D60337 /* WSRMyFeedViewController.m */,
 			);
-			name = Profile;
+			name = MyFeed;
 			sourceTree = "<group>";
 		};
 		9E94C34C19147B4600D60337 = {
@@ -158,7 +158,7 @@
 				9E347FC4192792BE00FB3A41 /* Authentication */,
 				9E94C393191483F900D60337 /* Askers */,
 				9E94C39E19156AD700D60337 /* Feeds */,
-				9E3AF74A1924EEC0005EE6EB /* Profile */,
+				9E3AF74A1924EEC0005EE6EB /* MyFeed */,
 				9EA5DA9A192248AB00BD1C6D /* WebViewNavigation */,
 				9ECFC7B319230F2500A6D39B /* Lib */,
 				9E94C36719147B4600D60337 /* WSRAppDelegate.h */,
@@ -356,7 +356,7 @@
 				9E94C39D19152D6800D60337 /* WSRApi.m in Sources */,
 				9E94C396191486D600D60337 /* WSRAsker.m in Sources */,
 				9EA5DA9D1922493100BD1C6D /* WSRWebViewNavigation.m in Sources */,
-				9E94C37219147B4600D60337 /* WSRProfileViewController.m in Sources */,
+				9E94C37219147B4600D60337 /* WSRMyFeedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@
 #import "WSRWebViewNavigation.h"
 #import "UIColor+HexColors.h"
 
-@interface WSRProfileViewController : UIViewController
+@interface WSRMyFeedViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 
