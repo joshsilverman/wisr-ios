@@ -16,7 +16,7 @@
                             <outlet property="delegate" destination="QUy-BD-bpt" id="fo4-Do-e5S"/>
                         </connections>
                     </webView>
-                    <navigationItem key="navigationItem" title="Profile" id="r7o-hP-H1K">
+                    <navigationItem key="navigationItem" title="My Feed" id="r7o-hP-H1K">
                         <barButtonItem key="backBarButtonItem" title=" " id="F8P-fz-X4p"/>
                     </navigationItem>
                     <connections>
@@ -125,8 +125,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Q2D-2t-eRU" kind="relationship" relationship="viewControllers" id="Tly-IS-d3m"/>
                         <segue destination="L9f-cH-3WC" kind="relationship" relationship="viewControllers" id="M8t-EP-wfW"/>
+                        <segue destination="Q2D-2t-eRU" kind="relationship" relationship="viewControllers" id="Tly-IS-d3m"/>
                         <segue destination="Eru-pb-Er3" kind="relationship" relationship="viewControllers" id="x91-A9-YKw"/>
                     </connections>
                 </tabBarController>
@@ -134,7 +134,7 @@
             </objects>
             <point key="canvasLocation" x="30" y="498"/>
         </scene>
-        <!--Askers View Controller - Subjects-->
+        <!--Askers View Controller - All Subjects-->
         <scene sceneID="D8I-Hh-5sC">
             <objects>
                 <tableViewController id="YgM-JV-j7B" customClass="WSRAskersViewController" sceneMemberID="viewController">
@@ -175,7 +175,7 @@
                             <outlet property="delegate" destination="YgM-JV-j7B" id="SEf-2h-aUa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Subjects" id="cIZ-QA-W7q">
+                    <navigationItem key="navigationItem" title="All Subjects" id="cIZ-QA-W7q">
                         <barButtonItem key="backBarButtonItem" title=" " id="9uo-0x-ysx"/>
                     </navigationItem>
                 </tableViewController>
@@ -183,11 +183,11 @@
             </objects>
             <point key="canvasLocation" x="1189" y="-191"/>
         </scene>
-        <!--Navigation Controller - Subjects-->
+        <!--Navigation Controller - All Subjects-->
         <scene sceneID="2Tm-FQ-NgX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q2D-2t-eRU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Subjects" image="first" id="T5U-Vm-QZ7"/>
+                    <tabBarItem key="tabBarItem" title="All Subjects" image="first" id="T5U-Vm-QZ7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sEK-XI-kih">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -202,11 +202,11 @@
             </objects>
             <point key="canvasLocation" x="653" y="-191"/>
         </scene>
-        <!--Navigation Controller - Profile-->
+        <!--Navigation Controller - My Feed-->
         <scene sceneID="5Nu-cP-f2L">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L9f-cH-3WC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="second" id="Z7h-1E-pvt"/>
+                    <tabBarItem key="tabBarItem" title="My Feed" image="second" id="Z7h-1E-pvt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2no-Nl-bTx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -268,6 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pHU-gG-Pf4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="30" y="1110"/>
         </scene>
     </scenes>
     <resources>
