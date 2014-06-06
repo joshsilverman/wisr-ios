@@ -46,7 +46,8 @@
 {
     [WSRApi getJSON:[WSRApi URLWithToken: @"users/wisr_follow_ids"]
  withSuccessHandler:^(NSArray *JSON){
-     self.followIds = [JSON mutableCopy];
+     [[NSUserDefaults standardUserDefaults] setObject:JSON forKey:@"followIds"];
+     
      dispatch_async(dispatch_get_main_queue(), ^{
          [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
          [self fetchAskers];
@@ -114,7 +115,7 @@
     cell.accessoryView = switchView;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    BOOL switchState =  [self.followIds containsObject:@(asker.id)];
+    BOOL switchState =  [[[NSUserDefaults standardUserDefaults] valueForKey:@"followIds"] containsObject:@(asker.id)];
     
     [switchView setOn:switchState animated:NO];
     [switchView addTarget:self
@@ -143,8 +144,10 @@
     NSDictionary *params = @{@"followed_id": [@(asker.id) stringValue]};
     
     [WSRApi post:url withData:params withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if (![self.followIds containsObject:@(asker.id)]) {
-            [self.followIds addObject:@(asker.id)];
+        if (![[[NSUserDefaults standardUserDefaults] valueForKey:@"followIds"] containsObject:@(asker.id)]) {
+            NSMutableArray *followIds = [[[NSUserDefaults standardUserDefaults] valueForKey:@"followIds"] mutableCopy];
+            [followIds addObject:@(asker.id)];
+            [[NSUserDefaults standardUserDefaults] setObject:followIds forKey:@"followIds"];
         }
     }];
 }
@@ -154,8 +157,10 @@
     NSDictionary *params = @{@"followed_id": [@(asker.id) stringValue]};
     
     [WSRApi post:url withData:params withCompletionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if ([self.followIds containsObject:@(asker.id)]) {
-            [self.followIds removeObject:@(asker.id)];
+        if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"followIds"] containsObject:@(asker.id)]) {
+            NSMutableArray *followIds = [[[NSUserDefaults standardUserDefaults] valueForKey:@"followIds"] mutableCopy];
+            [followIds removeObject:@(asker.id)];
+            [[NSUserDefaults standardUserDefaults] setObject:followIds forKey:@"followIds"];
         }
     }];
 }
