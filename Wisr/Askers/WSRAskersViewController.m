@@ -38,6 +38,7 @@
 {
     [super viewDidLoad];
     [self fetchAskers];
+    self.view.backgroundColor = [UIColor colorWithHexString:ColorWhite];
 }
 
 - (void)fetchAskers;
@@ -94,6 +95,7 @@
     NSString *silhouette_color = asker.styles[@"silhouette_color"];
     NSString *silhouette_color_stripped = [silhouette_color substringFromIndex:1];
     colorlabel.backgroundColor = [UIColor colorWithHexString:silhouette_color_stripped];
+    cell.backgroundColor = [UIColor colorWithHexString:ColorWhite];
     
     return cell;
 }

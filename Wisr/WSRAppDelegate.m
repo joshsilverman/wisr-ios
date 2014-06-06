@@ -35,20 +35,13 @@
 
 - (void)initAppearance
 {
-//    UIColor *byteClubBlue = [UIColor colorWithRed:61/255.0f
-//                                            green:154/255.0f
-//                                             blue:232/255.0f
-//                                            alpha:1.0f];
-    
     UIColor *wisrColor = [UIColor colorWithHexString:@"202734"];
     
-//    UIColor *wisrWhite = [UIColor whiteColor];
-//    [[UINavigationBar appearance] setBackgroundColor:wisrWhite];
-    
-    // Set appearance info
     [[UITabBar appearance] setBarTintColor:wisrColor];
+    [[UITabBar appearance] setTintColor: [UIColor colorWithHexString:ColorWhite]];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackOpaque];
     [[UINavigationBar appearance] setBarTintColor:wisrColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor colorWithHexString:ColorWhite]}];
     
     [[UIToolbar appearance] setBarStyle:UIBarStyleBlackOpaque];
     [[UIToolbar appearance] setBarTintColor:wisrColor];

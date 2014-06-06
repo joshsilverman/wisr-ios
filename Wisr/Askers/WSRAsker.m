@@ -8,6 +8,8 @@
 
 #import "WSRAsker.h"
 
+NSString * const ColorWhite = @"fdfcfa";
+
 @implementation WSRAsker
 
 - (id)initWithJSONData:(NSDictionary*)data

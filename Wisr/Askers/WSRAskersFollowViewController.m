@@ -39,6 +39,7 @@
 {
     [super viewDidLoad];
     [self fetchFollows];
+    self.view.backgroundColor = [UIColor colorWithHexString:ColorWhite];
 }
 
 - (void)fetchFollows;
@@ -107,6 +108,7 @@
     NSString *silhouette_color = asker.styles[@"silhouette_color"];
     NSString *silhouette_color_stripped = [silhouette_color substringFromIndex:1];
     colorlabel.backgroundColor = [UIColor colorWithHexString:silhouette_color_stripped];
+    cell.backgroundColor = [UIColor colorWithHexString:ColorWhite];
     
     UISwitch *switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
     cell.accessoryView = switchView;

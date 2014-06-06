@@ -15,6 +15,8 @@
 @property (nonatomic, copy) NSString *subjectURL;
 @property (nonatomic, copy) NSDictionary *styles;
 
+extern NSString* const ColorWhite;
+
 - (id)initWithJSONData:(NSDictionary*)data;
 
 @end
