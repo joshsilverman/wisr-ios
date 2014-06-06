@@ -16,6 +16,7 @@
 @property (nonatomic, copy) NSDictionary *styles;
 
 extern NSString* const ColorWhite;
+extern NSString* const ColorNavy;
 
 - (id)initWithJSONData:(NSDictionary*)data;
 

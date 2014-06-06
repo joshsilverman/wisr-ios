@@ -17,9 +17,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    NSString *bg_color_stripped = @"202734";
-    self.webView.backgroundColor = [UIColor colorWithHexString:bg_color_stripped];
+    
+    self.webView.backgroundColor = [UIColor colorWithHexString:ColorNavy];
     self.webView.opaque = NO;
 }
 

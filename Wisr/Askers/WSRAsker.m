@@ -9,6 +9,7 @@
 #import "WSRAsker.h"
 
 NSString * const ColorWhite = @"fdfcfa";
+NSString * const ColorNavy = @"202734";
 
 @implementation WSRAsker
 

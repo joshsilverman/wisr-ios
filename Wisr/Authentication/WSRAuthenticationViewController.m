@@ -18,6 +18,9 @@
 {
     [super viewDidLoad];
     [self fetchAuth];
+    
+    self.webView.backgroundColor = [UIColor colorWithHexString:ColorNavy];
+    self.webView.opaque = NO;
 }
 
 -(void)fetchAuth
