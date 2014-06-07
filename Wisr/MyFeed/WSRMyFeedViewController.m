@@ -27,16 +27,7 @@
     [super viewDidAppear:animated];
     [self fetchProfile];
     
-    NSArray *followIds = [[NSUserDefaults standardUserDefaults] valueForKey:@"followIds"];
-    if (followIds == Nil || [followIds count] == 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Follow subjects"
-                                                        message:@"Please follow a few subjects and then try visiting your feed."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-        self.tabBarController.selectedIndex = 2;
-    }
+    [self redirectIfNoFollowIds];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -55,6 +46,21 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)redirectIfNoFollowIds
+{
+    NSArray *followIds = [[NSUserDefaults standardUserDefaults] valueForKey:@"followIds"];
+    
+    if (followIds == Nil || [followIds count] == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Follow subjects"
+                                                        message:@"Please follow a few subjects and then try visiting your feed."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        self.tabBarController.selectedIndex = 2;
+    }
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
