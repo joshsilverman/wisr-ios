@@ -54,7 +54,7 @@
     
     if (followIds == Nil || [followIds count] == 0) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Follow subjects"
-                                                        message:@"Please follow a few subjects and then try visiting your feed."
+                                                        message:@"Please follow a few subjects and then visit your feed."
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
