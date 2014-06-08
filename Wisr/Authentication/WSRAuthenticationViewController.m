@@ -17,6 +17,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.loadingIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20,20)];
+    self.loadingIndicator.center = self.view.center;
+    [self.loadingIndicator setHidesWhenStopped:YES];
+    [self.webView addSubview:self.loadingIndicator];
+    
     [self fetchAuth];
     
     self.webView.backgroundColor = [UIColor colorWithHexString:ColorNavy];
@@ -25,6 +31,7 @@
 
 -(void)fetchAuth
 {
+    [self.loadingIndicator startAnimating];
     NSURL *url = [WSRWebViewNavigation URLforAuth];
     [WSRWebViewNavigation navigate:self.webView withURL:url];
 }
@@ -37,6 +44,8 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    [self.loadingIndicator stopAnimating];
+    
     // current location
     NSString *currentURLStr = [self.webView stringByEvaluatingJavaScriptFromString:@"window.location.href"];
     NSString *currentHost = [self.webView stringByEvaluatingJavaScriptFromString:@"window.location.host"];

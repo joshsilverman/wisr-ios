@@ -13,5 +13,6 @@
 @interface WSRAuthenticationViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) UIActivityIndicatorView *loadingIndicator;
 
 @end
