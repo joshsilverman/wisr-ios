@@ -27,7 +27,13 @@
     [self fetchFeed];
     
     NSString *bg_color = self.asker.styles[@"bg_color"];
-    NSString *bg_color_stripped = [bg_color substringFromIndex:1];
+    NSString *bg_color_stripped;
+    if (![bg_color isKindOfClass:[NSNull class]]) {
+        bg_color_stripped = [bg_color substringFromIndex:1];
+    } else {
+        bg_color_stripped = ColorNavy;
+    }
+    
     self.webView.backgroundColor = [UIColor colorWithHexString:bg_color_stripped];
     self.webView.opaque = NO;
 }
