@@ -24,7 +24,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self fetchFeed];
+    
+    self.loadingIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20,20)];
+    self.loadingIndicator.center = self.view.center;
+    [self.loadingIndicator setHidesWhenStopped:YES];
+    [self.webView addSubview:self.loadingIndicator];
     
     NSString *bg_color = self.asker.styles[@"bg_color"];
     NSString *bg_color_stripped;
@@ -36,17 +40,25 @@
     
     self.webView.backgroundColor = [UIColor colorWithHexString:bg_color_stripped];
     self.webView.opaque = NO;
+    
+    [self fetchFeed];
 }
 
 -(void)fetchFeed
 {
     NSURL *url = [WSRWebViewNavigation URLforAsker:self.asker forResource:@"feed"];
     [WSRWebViewNavigation navigate:self.webView withURL:url];
+    [self.loadingIndicator startAnimating];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [self.loadingIndicator stopAnimating];
 }
 
 /*

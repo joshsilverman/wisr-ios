@@ -13,5 +13,6 @@
 @interface WSRMyFeedViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) UIActivityIndicatorView *loadingIndicator;
 
 @end

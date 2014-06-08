@@ -20,6 +20,11 @@
     
     self.webView.backgroundColor = [UIColor colorWithHexString:ColorNavy];
     self.webView.opaque = NO;
+    
+    self.loadingIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20,20)];
+    self.loadingIndicator.center = self.view.center;
+    [self.loadingIndicator setHidesWhenStopped:YES];
+    [self.webView addSubview:self.loadingIndicator];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -40,6 +45,7 @@
 {
     NSURL *url = [WSRWebViewNavigation URLWithToken:@"feeds/index"];
     [WSRWebViewNavigation navigate:self.webView withURL:url];
+    [self.loadingIndicator startAnimating];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,6 +77,7 @@
     NSString *currentPathname = [self.webView stringByEvaluatingJavaScriptFromString:@"window.location.pathname"];
     
     NSString *authURLStr = [[WSRWebViewNavigation URLforAuth] absoluteString];
+    [self.loadingIndicator stopAnimating];
     
     if ([currentURLStr isEqualToString:authURLStr]) {}
     else if ([currentHost isEqualToString:@"api.twitter.com"]
