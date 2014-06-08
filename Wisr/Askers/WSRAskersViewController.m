@@ -49,7 +49,7 @@
      for (NSDictionary *data in JSON) {
          if (![data[@"published"] isKindOfClass:[NSNull class]]
              && ![data[@"subject"] isKindOfClass:[NSNull class]]
-             && data[@"published"]) {
+             && [data[@"published"] boolValue]) {
              
              WSRAsker *asker = [[WSRAsker alloc] initWithJSONData:data];
              [askersFound addObject:asker];
