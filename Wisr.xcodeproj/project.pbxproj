@@ -296,9 +296,6 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Wisr;
 				TargetAttributes = {
-					9E94C35419147B4600D60337 = {
-						DevelopmentTeam = PK5Q9E73J7;
-					};
 					9E94C37819147B4600D60337 = {
 						TestTargetID = 9E94C35419147B4600D60337;
 					};
