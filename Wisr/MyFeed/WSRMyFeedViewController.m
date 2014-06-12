@@ -25,12 +25,18 @@
     self.loadingIndicator.center = self.view.center;
     [self.loadingIndicator setHidesWhenStopped:YES];
     [self.webView addSubview:self.loadingIndicator];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self
+                       action:@selector(refreshProfile:)
+             forControlEvents:UIControlEventValueChanged];
+    [self.webView.scrollView addSubview:self.refreshControl];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self fetchProfile];
+    [self fetchProfile:YES];
     
     [self redirectIfNoFollowIds];
 }
@@ -41,11 +47,19 @@
     [self.webView loadHTMLString:@"" baseURL:nil];
 }
 
--(void)fetchProfile
+-(void)refreshProfile:(UIRefreshControl *)refresh
+{
+    [self fetchProfile:NO];
+}
+
+-(void)fetchProfile:(BOOL *)loadingIndicator
 {
     NSURL *url = [WSRWebViewNavigation URLWithToken:@"feeds/index"];
     [WSRWebViewNavigation navigate:self.webView withURL:url];
-    [self.loadingIndicator startAnimating];
+    
+    if (loadingIndicator) {
+        [self.loadingIndicator startAnimating];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,6 +92,7 @@
     
     NSString *authURLStr = [[WSRWebViewNavigation URLforAuth] absoluteString];
     [self.loadingIndicator stopAnimating];
+    [self.refreshControl endRefreshing];
     
     if ([currentURLStr isEqualToString:authURLStr]) {}
     else if ([currentHost isEqualToString:@"api.twitter.com"]

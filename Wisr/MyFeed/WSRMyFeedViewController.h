@@ -14,5 +14,6 @@
 
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) UIActivityIndicatorView *loadingIndicator;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
