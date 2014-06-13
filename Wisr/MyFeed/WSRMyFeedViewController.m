@@ -49,7 +49,7 @@
 
 -(void)refreshProfile:(UIRefreshControl *)refresh
 {
-    [self fetchProfile:NO];
+    [self.webView stringByEvaluatingJavaScriptFromString:@"$(window).trigger('ios:refresh')"];
 }
 
 -(void)fetchProfile:(BOOL *)loadingIndicator
@@ -104,6 +104,22 @@
             self.tabBarController.selectedIndex = 0;
         }
     }
+}
+
+- (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
+    NSURL *URL = [request URL];
+    
+    NSString *scheme = [URL scheme];
+    NSString *host = [URL host];
+    
+    if ([scheme isEqualToString:@"ios"]) {
+        if ([host isEqualToString:@"refreshed"]) {
+            [self.refreshControl performSelector:@selector(endRefreshing) withObject:self afterDelay:0.5];
+            return NO;
+        }
+    }
+    
+    return YES;
 }
 
 @end
