@@ -29,6 +29,7 @@
     self.loadingIndicator.center = self.view.center;
     [self.loadingIndicator setHidesWhenStopped:YES];
     [self.webView addSubview:self.loadingIndicator];
+    self.webView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
     
     NSString *bg_color = self.asker.styles[@"bg_color"];
     NSString *bg_color_stripped;

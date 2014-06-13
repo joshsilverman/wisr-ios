@@ -25,6 +25,7 @@
     self.loadingIndicator.center = self.view.center;
     [self.loadingIndicator setHidesWhenStopped:YES];
     [self.webView addSubview:self.loadingIndicator];
+    self.webView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self
