@@ -32,20 +32,14 @@
                        action:@selector(refreshProfile:)
              forControlEvents:UIControlEventValueChanged];
     [self.webView.scrollView addSubview:self.refreshControl];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [self fetchProfile:YES];
     
-    [self redirectIfNoFollowIds];
+    [self loadContent];
 }
 
-- (void)viewDidDisappear:(BOOL)animated
+- (void)loadContent
 {
-    [super viewDidDisappear:animated];
-    [self.webView loadHTMLString:@"" baseURL:nil];
+    [self fetchProfile:YES];
+    [self redirectIfNoFollowIds];
 }
 
 -(void)refreshProfile:(UIRefreshControl *)refresh
