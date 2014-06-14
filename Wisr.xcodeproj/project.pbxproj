@@ -25,6 +25,7 @@
 		9E94C39919148AD300D60337 /* WSRAskersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C39819148AD300D60337 /* WSRAskersViewController.m */; };
 		9E94C39D19152D6800D60337 /* WSRApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C39C19152D6800D60337 /* WSRApi.m */; };
 		9E94C3A119156B8F00D60337 /* WSRFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E94C3A019156B8F00D60337 /* WSRFeedViewController.m */; };
+		9EA566A3194D08B000FA02F1 /* WSRSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA566A2194D08B000FA02F1 /* WSRSettingsViewController.m */; };
 		9EA5DA9D1922493100BD1C6D /* WSRWebViewNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA5DA9C1922493100BD1C6D /* WSRWebViewNavigation.m */; };
 		9EC2B53C193F4C96005B81C7 /* WSRMyFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC2B53B193F4C96005B81C7 /* WSRMyFeedViewController.m */; };
 		9ECFC7B9192396B100A6D39B /* UIColor+HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECFC7B8192396B100A6D39B /* UIColor+HexColors.m */; };
@@ -69,6 +70,8 @@
 		9E94C39C19152D6800D60337 /* WSRApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRApi.m; path = Api/WSRApi.m; sourceTree = "<group>"; };
 		9E94C39F19156B8F00D60337 /* WSRFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRFeedViewController.h; path = Feeds/WSRFeedViewController.h; sourceTree = "<group>"; };
 		9E94C3A019156B8F00D60337 /* WSRFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRFeedViewController.m; path = Feeds/WSRFeedViewController.m; sourceTree = "<group>"; };
+		9EA566A1194D08B000FA02F1 /* WSRSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRSettingsViewController.h; path = Settings/WSRSettingsViewController.h; sourceTree = "<group>"; };
+		9EA566A2194D08B000FA02F1 /* WSRSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRSettingsViewController.m; path = Settings/WSRSettingsViewController.m; sourceTree = "<group>"; };
 		9EA5DA9B1922493100BD1C6D /* WSRWebViewNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRWebViewNavigation.h; path = WebViewNavigation/WSRWebViewNavigation.h; sourceTree = "<group>"; };
 		9EA5DA9C1922493100BD1C6D /* WSRWebViewNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRWebViewNavigation.m; path = WebViewNavigation/WSRWebViewNavigation.m; sourceTree = "<group>"; };
 		9EC2B53A193F4C8B005B81C7 /* WSRMyFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRMyFeedViewController.h; path = MyFeed/WSRMyFeedViewController.h; sourceTree = "<group>"; };
@@ -161,6 +164,7 @@
 				9E3AF74A1924EEC0005EE6EB /* MyFeed */,
 				9EA5DA9A192248AB00BD1C6D /* WebViewNavigation */,
 				9ECFC7B319230F2500A6D39B /* Lib */,
+				9EA566A0194D089400FA02F1 /* Settings */,
 				9E94C36719147B4600D60337 /* WSRAppDelegate.h */,
 				9E94C36819147B4600D60337 /* WSRAppDelegate.m */,
 				9E94C36A19147B4600D60337 /* Main.storyboard */,
@@ -228,6 +232,15 @@
 				9E94C3A019156B8F00D60337 /* WSRFeedViewController.m */,
 			);
 			name = Feeds;
+			sourceTree = "<group>";
+		};
+		9EA566A0194D089400FA02F1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9EA566A1194D08B000FA02F1 /* WSRSettingsViewController.h */,
+				9EA566A2194D08B000FA02F1 /* WSRSettingsViewController.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		9EA5DA9A192248AB00BD1C6D /* WebViewNavigation */ = {
@@ -348,6 +361,7 @@
 			files = (
 				9E94C39919148AD300D60337 /* WSRAskersViewController.m in Sources */,
 				9E94C36519147B4600D60337 /* main.m in Sources */,
+				9EA566A3194D08B000FA02F1 /* WSRSettingsViewController.m in Sources */,
 				9ECFC7B9192396B100A6D39B /* UIColor+HexColors.m in Sources */,
 				9EF7DB5119326D09001078CD /* WSRAskersFollowViewController.m in Sources */,
 				9E347FC7192798D800FB3A41 /* WSRAuthenticationViewController.m in Sources */,

@@ -33,6 +33,18 @@
              forControlEvents:UIControlEventValueChanged];
     [self.webView.scrollView addSubview:self.refreshControl];
     
+    NSString *token = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
+
+    if (!token) {
+        [self loadContent];
+    } else {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *authController = [storyboard instantiateViewControllerWithIdentifier:@"Authentication"];
+        [self presentModalViewController:authController animated:YES];
+    }
+    
+    
+    
     [self loadContent];
 }
 
