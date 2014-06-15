@@ -59,11 +59,11 @@
     else if ([currentPathname isEqualToString:authCallbackPathname]) {
         NSString *authToken = [self.webView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];
         
-        [[NSUserDefaults standardUserDefaults] setObject:authToken forKey:@"authToken"];
         
-        UIViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBar"];
-        self.navigationController.navigationBar.hidden = YES;
-        [self.navigationController setViewControllers:[NSArray arrayWithObject:controller] animated:YES];
+        [[NSUserDefaults standardUserDefaults] setObject:authToken forKey:@"authToken"];
+        [self.myFeedView viewDidLoad];
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 

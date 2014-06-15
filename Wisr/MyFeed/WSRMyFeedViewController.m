@@ -33,25 +33,22 @@
              forControlEvents:UIControlEventValueChanged];
     [self.webView.scrollView addSubview:self.refreshControl];
     
-    NSString *token = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
-
-    if (!token) {
-        [self loadContent];
-    } else {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *authController = [storyboard instantiateViewControllerWithIdentifier:@"Authentication"];
-        [self presentModalViewController:authController animated:YES];
-    }
-    
-    
-    
     [self loadContent];
 }
 
 - (void)loadContent
 {
-    [self fetchProfile:YES];
-    [self redirectIfNoFollowIds];
+    NSString *token = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
+    
+    if (token) {
+        [self fetchProfile:YES];
+        [self redirectIfNoFollowIds];
+    } else {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        WSRAuthenticationViewController *authController = [storyboard instantiateViewControllerWithIdentifier:@"Authentication"];
+        [self presentModalViewController:authController animated:YES];
+        authController.myFeedView = self;
+    }
 }
 
 -(void)refreshProfile:(UIRefreshControl *)refresh

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WSRWebViewNavigation.h"
 #import "UIColor+HexColors.h"
+#import "WSRAuthenticationViewController.h"
 
 @interface WSRMyFeedViewController : UIViewController
 
