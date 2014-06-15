@@ -53,8 +53,9 @@
         [self redirectIfNoFollowIds];
     } else {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        WSRAuthenticationViewController *authController = [storyboard instantiateViewControllerWithIdentifier:@"Authentication"];
-        [self presentModalViewController:authController animated:YES];
+        UINavigationController *authNavController = [storyboard instantiateViewControllerWithIdentifier:@"AuthenticationNav"];
+        WSRAuthenticationViewController *authController = authNavController.childViewControllers[0];
+        [self presentModalViewController:authNavController animated:YES];
         authController.myFeedView = self;
     }
 }
