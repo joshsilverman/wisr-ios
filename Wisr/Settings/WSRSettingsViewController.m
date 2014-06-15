@@ -45,6 +45,8 @@
         [storage deleteCookie:cookie];
     }
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    self.tabBarController.selectedIndex = 0;
 }
 
 /*

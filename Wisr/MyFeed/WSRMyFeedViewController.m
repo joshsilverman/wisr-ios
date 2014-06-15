@@ -36,6 +36,14 @@
     [self loadContent];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSString *token = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
+    if (!token) {
+        [self loadContent];
+    }
+}
+
 - (void)loadContent
 {
     NSString *token = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
