@@ -32,6 +32,7 @@
 
 -(void)fetchAuth
 {
+    [self.loadingIndicator startAnimating];
     NSURL *url = [WSRWebViewNavigation URLforAuth];
     [WSRWebViewNavigation navigate:self.webView withURL:url];
 }
