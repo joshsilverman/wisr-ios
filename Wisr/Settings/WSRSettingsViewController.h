@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WSRAsker.h"
+#import "UIColor+HexColors.h"
 
 @interface WSRSettingsViewController : UIViewController
 

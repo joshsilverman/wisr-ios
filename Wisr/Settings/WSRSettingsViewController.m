@@ -26,7 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor colorWithHexString:ColorNavy];
+    
+    UIImage *originalImage = [UIImage imageNamed:@"GreyButton"];
+    UIEdgeInsets insets = UIEdgeInsetsMake(5.0f, 5.0f, 5.0f, 5.0f);
+    UIImage *stretchableImage = [originalImage resizableImageWithCapInsets:insets];
+    [self.signout setBackgroundImage:stretchableImage  forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
