@@ -279,11 +279,11 @@
             </objects>
             <point key="canvasLocation" x="1179" y="1878"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Settings-->
         <scene sceneID="vb7-wo-k8w">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9jK-lj-Qdl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="NFz-6W-KV8"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Cog" id="NFz-6W-KV8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vAE-ke-Zsa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -318,6 +318,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cog" width="50" height="50"/>
         <image name="Follow" width="50" height="50"/>
         <image name="first" width="50" height="50"/>
         <image name="second" width="42" height="50"/>
