@@ -97,7 +97,7 @@
             </objects>
             <point key="canvasLocation" x="1665" y="-191"/>
         </scene>
-        <!--Authentication View Controller-->
+        <!--Authentication View Controller - Sign in-->
         <scene sceneID="Sdb-uU-0PF">
             <objects>
                 <viewController storyboardIdentifier="Authentication" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tiu-1g-ZQ2" customClass="WSRAuthenticationViewController" sceneMemberID="viewController">
@@ -109,7 +109,7 @@
                             <outlet property="delegate" destination="Tiu-1g-ZQ2" id="LhZ-9R-8IH"/>
                         </connections>
                     </webView>
-                    <navigationItem key="navigationItem" id="3dk-gX-E6V"/>
+                    <navigationItem key="navigationItem" title="Sign in" id="3dk-gX-E6V"/>
                     <connections>
                         <outlet property="webView" destination="6C7-gF-62h" id="2Jk-xr-gAz"/>
                     </connections>
