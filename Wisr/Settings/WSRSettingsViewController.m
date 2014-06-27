@@ -43,6 +43,7 @@
 - (IBAction)signout:(id)sender {
     
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"authToken"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"followIds"];
     
     NSHTTPCookie *cookie;
     NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
