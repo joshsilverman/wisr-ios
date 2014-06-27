@@ -58,9 +58,9 @@
     if ([currentURLStr isEqualToString:authURLStr]) {}
     else if ([currentHost isEqualToString:@"api.twitter.com"]
              && [currentPathname isEqualToString:@"/oauth/authenticate"]) {}
-    else if ([currentPathname isEqualToString:authCallbackPathname]) {
+    else if ([currentPathname isEqualToString:authCallbackPathname]
+             || [currentPathname isEqualToString:@"/users/auth_token"]) {
         NSString *authToken = [self.webView stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"];
-        
         
         [[NSUserDefaults standardUserDefaults] setObject:authToken forKey:@"authToken"];
         [self.myFeedView viewDidLoad];
