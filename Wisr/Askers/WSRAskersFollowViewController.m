@@ -42,6 +42,12 @@
     self.view.backgroundColor = [UIColor colorWithHexString:ColorWhite];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)fetchFollows;
 {
     [WSRApi getJSON:[WSRApi URLWithToken: @"users/wisr_follow_ids"]
