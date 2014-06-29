@@ -42,9 +42,8 @@
     self.view.backgroundColor = [UIColor colorWithHexString:ColorWhite];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self.tableView reloadData];
 }
 
