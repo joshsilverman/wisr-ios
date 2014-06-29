@@ -36,6 +36,11 @@
     [self loadContent];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.refreshControl endRefreshing];   
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     NSString *token = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
