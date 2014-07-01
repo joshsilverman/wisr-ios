@@ -142,6 +142,11 @@
     } else {
         [self switchedOff:switchControl forAsker:asker];
     }
+    
+    UITabBarController *tabBar = self.tabBarController;
+    UINavigationController *navView = tabBar.childViewControllers[0];
+    WSRMyFeedViewController *myFeed = navView.childViewControllers[0];
+    myFeed.followsChanged = TRUE;
 }
 
 - (void) switchedOn:(UISwitch*) switchControl forAsker:(WSRAsker*) asker {

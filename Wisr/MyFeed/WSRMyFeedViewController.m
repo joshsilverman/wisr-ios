@@ -38,7 +38,12 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.refreshControl endRefreshing];   
+    [self.refreshControl endRefreshing];
+    
+    if (self.followsChanged) {
+        [self loadContent];
+        self.followsChanged = FALSE;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated

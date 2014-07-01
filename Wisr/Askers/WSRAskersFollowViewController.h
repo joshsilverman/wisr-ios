@@ -10,6 +10,7 @@
 #import "WSRAsker.h"
 #import "WSRApi.h"
 #import "WSRFeedViewController.h"
+#import "WSRMyFeedViewController.h"
 
 @interface WSRAskersFollowViewController : UITableViewController
 
