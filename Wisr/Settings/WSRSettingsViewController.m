@@ -33,7 +33,9 @@
     UIImage *stretchableImage = [originalImage resizableImageWithCapInsets:insets];
     [self.signout setBackgroundImage:stretchableImage  forState:UIControlStateNormal];
     
-    self.version.text = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    NSString *versionNumber = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    NSString *versionStr = [NSString stringWithFormat:@"Version %@", versionNumber];
+    self.version.text = versionStr;
 }
 
 - (void)didReceiveMemoryWarning
