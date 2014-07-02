@@ -267,12 +267,20 @@
                                     <action selector="signout:" destination="VSe-KO-RAF" eventType="touchUpInside" id="ox0-29-qzQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ab-ao-scz">
+                                <rect key="frame" x="106" y="318" width="109" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="mtr-RC-2jB"/>
                     <connections>
                         <outlet property="signout" destination="dkZ-Bj-ytq" id="8RM-Jq-6Js"/>
+                        <outlet property="view" destination="0ab-ao-scz" id="Ukl-l8-fL4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mYl-7k-gQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -32,6 +32,8 @@
     UIEdgeInsets insets = UIEdgeInsetsMake(5.0f, 5.0f, 5.0f, 5.0f);
     UIImage *stretchableImage = [originalImage resizableImageWithCapInsets:insets];
     [self.signout setBackgroundImage:stretchableImage  forState:UIControlStateNormal];
+    
+    self.version.text = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 }
 
 - (void)didReceiveMemoryWarning

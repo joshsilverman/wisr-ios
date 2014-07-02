@@ -13,5 +13,6 @@
 @interface WSRSettingsViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIButton *signout;
+@property (strong, nonatomic) IBOutlet UILabel *version;
 
 @end
