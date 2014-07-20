@@ -61,6 +61,7 @@
     if (token) {
         [self fetchProfile:YES];
         [self redirectIfNoFollowIds];
+        [self registerForAPNS];
     } else {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UINavigationController *authNavController = [storyboard instantiateViewControllerWithIdentifier:@"AuthenticationNav"];
@@ -83,6 +84,12 @@
     if (loadingIndicator) {
         [self.loadingIndicator startAnimating];
     }
+}
+
+- (void)registerForAPNS
+{
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
 }
 
 - (void)didReceiveMemoryWarning
