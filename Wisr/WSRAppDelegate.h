@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WSRAskersViewController.h"
+#import "WSRQuestionViewController.h"
 #import "WSRAsker.h"
 #import "UIColor+HexColors.h"
 

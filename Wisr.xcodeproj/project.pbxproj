@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E347FC7192798D800FB3A41 /* WSRAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E347FC6192798D800FB3A41 /* WSRAuthenticationViewController.m */; };
+		9E66A6D3197FE71F00E11ADC /* WSRQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E66A6D2197FE71F00E11ADC /* WSRQuestionViewController.m */; };
 		9E94C35919147B4600D60337 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E94C35819147B4600D60337 /* Foundation.framework */; };
 		9E94C35B19147B4600D60337 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E94C35A19147B4600D60337 /* CoreGraphics.framework */; };
 		9E94C35D19147B4600D60337 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E94C35C19147B4600D60337 /* UIKit.framework */; };
@@ -45,6 +46,8 @@
 /* Begin PBXFileReference section */
 		9E347FC5192798D800FB3A41 /* WSRAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRAuthenticationViewController.h; path = Authentication/WSRAuthenticationViewController.h; sourceTree = "<group>"; };
 		9E347FC6192798D800FB3A41 /* WSRAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRAuthenticationViewController.m; path = Authentication/WSRAuthenticationViewController.m; sourceTree = "<group>"; };
+		9E66A6D1197FE71F00E11ADC /* WSRQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSRQuestionViewController.h; path = Questions/WSRQuestionViewController.h; sourceTree = "<group>"; };
+		9E66A6D2197FE71F00E11ADC /* WSRQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSRQuestionViewController.m; path = Questions/WSRQuestionViewController.m; sourceTree = "<group>"; };
 		9E94C35519147B4600D60337 /* Wisr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wisr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E94C35819147B4600D60337 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9E94C35A19147B4600D60337 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -124,6 +127,15 @@
 			name = MyFeed;
 			sourceTree = "<group>";
 		};
+		9E66A6D0197FE6BB00E11ADC /* Questions */ = {
+			isa = PBXGroup;
+			children = (
+				9E66A6D1197FE71F00E11ADC /* WSRQuestionViewController.h */,
+				9E66A6D2197FE71F00E11ADC /* WSRQuestionViewController.m */,
+			);
+			name = Questions;
+			sourceTree = "<group>";
+		};
 		9E94C34C19147B4600D60337 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +174,7 @@
 				9E94C393191483F900D60337 /* Askers */,
 				9E94C39E19156AD700D60337 /* Feeds */,
 				9E3AF74A1924EEC0005EE6EB /* MyFeed */,
+				9E66A6D0197FE6BB00E11ADC /* Questions */,
 				9EA5DA9A192248AB00BD1C6D /* WebViewNavigation */,
 				9ECFC7B319230F2500A6D39B /* Lib */,
 				9EA566A0194D089400FA02F1 /* Settings */,
@@ -364,6 +377,7 @@
 				9EA566A3194D08B000FA02F1 /* WSRSettingsViewController.m in Sources */,
 				9ECFC7B9192396B100A6D39B /* UIColor+HexColors.m in Sources */,
 				9EF7DB5119326D09001078CD /* WSRAskersFollowViewController.m in Sources */,
+				9E66A6D3197FE71F00E11ADC /* WSRQuestionViewController.m in Sources */,
 				9E347FC7192798D800FB3A41 /* WSRAuthenticationViewController.m in Sources */,
 				9E94C36919147B4600D60337 /* WSRAppDelegate.m in Sources */,
 				9E94C3A119156B8F00D60337 /* WSRFeedViewController.m in Sources */,

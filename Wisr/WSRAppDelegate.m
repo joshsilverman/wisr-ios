@@ -19,10 +19,11 @@
     
 	if (launchOptions != nil)
 	{
-		NSDictionary *dictionary = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-		if (dictionary != nil)
+		NSDictionary *notificationDict = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+		if (notificationDict != nil)
 		{
-			NSLog(@"Launched from push notification: %@", dictionary);
+			NSLog(@"Launched from push notification: %@", notificationDict);
+            [self directAccordingToNotificationDict:notificationDict];
 		}
 	}
     
@@ -32,6 +33,22 @@
 - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo
 {
 	NSLog(@"Received notification: %@", userInfo);
+    [self directAccordingToNotificationDict:userInfo];
+}
+
+- (void)directAccordingToNotificationDict:(NSDictionary*)notificationDict
+{
+//    if (token) {
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    tabBarController.selectedIndex = 0;
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    UINavigationController *controller = (UINavigationController*)[mainStoryboard
+                                                                   instantiateViewControllerWithIdentifier: @"QuestionNavigationController"];
+    
+    [tabBarController presentViewController:controller animated:YES completion:nil];
+    
+//    }
 }
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
