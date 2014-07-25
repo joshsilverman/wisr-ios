@@ -13,6 +13,7 @@
 @interface WSRWebViewNavigation : NSObject
 
 +(NSURL*)URLforAsker: (WSRAsker *)asker forResource:(NSString *)resource;
++(NSURL*)URLforQuestionID: (NSInteger *)questionId;
 +(NSURL*)URLforAuth;
 +(NSURL*)URLforAuthCallback;
 +(NSURL*)URLWithToken: (NSString *)path;

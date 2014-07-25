@@ -16,4 +16,7 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBarItem;
 @property (strong, nonatomic) UIActivityIndicatorView *loadingIndicator;
 
+@property (nonatomic) NSInteger asker_id;
+@property (nonatomic) NSInteger question_id;
+
 @end

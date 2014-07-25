@@ -40,6 +40,19 @@
     return url;
 }
 
++(NSURL*)URLforQuestionID: (NSInteger *)questionId
+{
+    NSString *authToken = [[NSUserDefaults standardUserDefaults] valueForKey:@"authToken"];
+    NSString *strURL = [NSString stringWithFormat:@"%@/questions/%@?a=%@",
+                        BaseURLStr,
+                        questionId,
+                        authToken];
+    NSString *escapedURLStr = [strURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:escapedURLStr];
+    
+    return url;
+}
+
 +(NSURL*)URLforAuth
 {
     NSString *strURL = [NSString stringWithFormat:@"%@/users/sign_in", BaseURLStr];

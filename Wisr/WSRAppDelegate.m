@@ -38,17 +38,21 @@
 
 - (void)directAccordingToNotificationDict:(NSDictionary*)notificationDict
 {
-//    if (token) {
-    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-    tabBarController.selectedIndex = 0;
-    
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    UINavigationController *controller = (UINavigationController*)[mainStoryboard
-                                                                   instantiateViewControllerWithIdentifier: @"QuestionNavigationController"];
-    
-    [tabBarController presentViewController:controller animated:YES completion:nil];
-    
-//    }
+    if ([[notificationDict valueForKey:@"path"] isEqualToString:@"question"]) {
+        UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+        tabBarController.selectedIndex = 0;
+
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        UINavigationController *navController = (UINavigationController*)[mainStoryboard
+                                                                       instantiateViewControllerWithIdentifier: @"QuestionNavigationController"];
+
+        WSRQuestionViewController *questionController = navController.viewControllers[0];
+        questionController.asker_id = [notificationDict valueForKey:@"asker_id"];
+        questionController.question_id = [notificationDict valueForKey:@"question_id"];
+
+
+        [tabBarController presentViewController:navController animated:YES completion:nil];
+    }
 }
 
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken

@@ -31,8 +31,7 @@
 
 -(void)fetchQuestion
 {
-//    NSURL *url = [WSRWebViewNavigation URLforAsker:self.asker forResource:@"feed"];
-    NSURL *url = [NSURL URLWithString:@"https://www.wisr.com/questions/4145?variant=phone"];
+    NSURL *url = [WSRWebViewNavigation URLforQuestionID:self.question_id];
     [WSRWebViewNavigation navigate:self.webView withURL:url];
     [self.loadingIndicator startAnimating];
 }
