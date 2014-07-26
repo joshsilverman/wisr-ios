@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WSRWebViewNavigation.h"
+#import "UIColor+HexColors.h"
 
 @interface WSRQuestionViewController : UIViewController
 
@@ -16,7 +17,8 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBarItem;
 @property (strong, nonatomic) UIActivityIndicatorView *loadingIndicator;
 
-@property (nonatomic) NSInteger asker_id;
-@property (nonatomic) NSInteger question_id;
+@property (nonatomic) NSInteger askerId;
+@property (nonatomic) NSInteger questionId;
+@property (nonatomic) NSString *bgColor;
 
 @end

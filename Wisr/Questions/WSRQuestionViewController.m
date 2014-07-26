@@ -25,13 +25,16 @@
 
 - (void)viewDidLoad
 {
+    self.webView.backgroundColor = [UIColor colorWithHexString:self.bgColor];
+    self.webView.opaque = NO;
+    
     [super viewDidLoad];
     [self fetchQuestion];
 }
 
 -(void)fetchQuestion
 {
-    NSURL *url = [WSRWebViewNavigation URLforQuestionID:self.question_id];
+    NSURL *url = [WSRWebViewNavigation URLforQuestionID:self.questionId];
     [WSRWebViewNavigation navigate:self.webView withURL:url];
     [self.loadingIndicator startAnimating];
 }

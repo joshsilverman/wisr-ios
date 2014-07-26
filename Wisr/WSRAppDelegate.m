@@ -45,12 +45,13 @@
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
         UINavigationController *navController = (UINavigationController*)[mainStoryboard
                                                                        instantiateViewControllerWithIdentifier: @"QuestionNavigationController"];
+        navController.navigationBar.barTintColor = [UIColor colorWithHexString:@"2d0a19"];
 
         WSRQuestionViewController *questionController = navController.viewControllers[0];
-        questionController.asker_id = [notificationDict valueForKey:@"asker_id"];
-        questionController.question_id = [notificationDict valueForKey:@"question_id"];
-
-
+        questionController.askerId = [notificationDict valueForKey:@"asker_id"];
+        questionController.questionId = [notificationDict valueForKey:@"question_id"];
+        questionController.bgColor = [notificationDict valueForKey:@"bg_color"];
+        
         [tabBarController presentViewController:navController animated:YES completion:nil];
     }
 }
