@@ -45,7 +45,7 @@
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
         UINavigationController *navController = (UINavigationController*)[mainStoryboard
                                                                        instantiateViewControllerWithIdentifier: @"QuestionNavigationController"];
-        navController.navigationBar.barTintColor = [UIColor colorWithHexString:@"2d0a19"];
+        navController.navigationBar.barTintColor = [UIColor colorWithHexString:[notificationDict valueForKey:@"bg_color"]];
 
         WSRQuestionViewController *questionController = navController.viewControllers[0];
         questionController.askerId = [notificationDict valueForKey:@"asker_id"];
