@@ -25,13 +25,16 @@
     self.loadingIndicator.center = self.view.center;
     [self.loadingIndicator setHidesWhenStopped:YES];
     [self.webView addSubview:self.loadingIndicator];
+
     self.webView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
-    
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self
-                       action:@selector(refreshProfile:)
-             forControlEvents:UIControlEventValueChanged];
-    [self.webView.scrollView addSubview:self.refreshControl];
+
+    if (!self.refreshControl) {
+        self.refreshControl = [[UIRefreshControl alloc] init];
+        [self.refreshControl addTarget:self
+                           action:@selector(refreshProfile:)
+                 forControlEvents:UIControlEventValueChanged];
+        [self.webView.scrollView addSubview:self.refreshControl];
+    }
     
     [self loadContent];
 }
