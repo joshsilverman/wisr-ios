@@ -10,6 +10,7 @@
 
 NSString * const BaseURLStr = @"https://www.wisr.com";
 //NSString * const BaseURLStr = @"http://localhost:3000";
+//NSString * const BaseURLStr = @"https://xtoerezjby.localtunnel.me";
 
 @implementation WSRApi
 
